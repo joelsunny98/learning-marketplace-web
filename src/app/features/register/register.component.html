@@ -1,1 +1,23 @@
-<p>register works!</p>
+<form [formGroup]="registerForm">
+
+    Value : {{ registerForm.value | json }}
+
+    <hr>
+    
+    <label>First Name</label>
+    <input type="text" formControlName="firstName"><br>
+    <label>Second Name</label>
+    <input text="text" formControlName="lastName"><br>
+    <label>Role</label>
+    <input type="text" formControlName="role"><br>
+    <label>Username</label>
+    <input type="email" formControlName="username"><br>
+    <label>Password</label>
+    <input type="password" formControlName="password"><br>
+
+    <div>
+        <button (click)="register(user)">Sign Up</button>
+    </div>
+
+    
+</form>

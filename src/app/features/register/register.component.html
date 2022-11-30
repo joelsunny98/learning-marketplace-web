@@ -4,7 +4,7 @@
 
     <hr>
     
-    <label>First Name</label>
+    <!-- <label>First Name</label>
     <input type="text" formControlName="firstName"><br>
     <label>Second Name</label>
     <input text="text" formControlName="lastName"><br>
@@ -13,16 +13,37 @@
     <label>Username</label>
     <input type="email" formControlName="username"><br>
     <label>Password</label>
-    <input type="password" formControlName="password"><br>
+    <input type="password" formControlName="Password"><br> -->
 
+    <br><br>
+    <span class="p-float-label">
+        <input id="float-input" type="text" formControlName="firstName" pInputText> 
+        <label for="float-input">First Name</label>
+    </span>
+    <br><br>
+    <span class="p-float-label">
+        <input id="float-input" type="text" formControlName="lastName" pInputText> 
+        <label for="float-input">Second Name</label>
+    </span>
+    <br><br>
+    <span class="p-float-label">
+        <input id="float-input" type="text" formControlName="role" pInputText> 
+        <label for="float-input">Role</label>
+    </span>
+    <br><br>
+    <span class="p-float-label">
+        <input id="float-input" type="text" formControlName="username" pInputText> 
+        <label for="float-input">Username</label>
+    </span>
+    <br><br>
+    <span class="p-float-label">
+        <input id="float-input" type="text" formControlName="password" pInputText> 
+        <label for="float-input">Password</label>
+    </span>
+    <br><br>
     <div>
         <button (click)="register(user)">Sign Up</button>
     </div>
-
-    <!-- <span class="p-float-label">
-        <input id="float-input" type="text" formControlName="username" pInputText> 
-        <label for="float-input">Username</label>
-    </span> -->
 
     
 </form>

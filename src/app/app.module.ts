@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {InputTextModule} from 'primeng/inputtext';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,7 +22,8 @@ import { AuthInterceptor } from './shared/services/auth.interceptor';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    InputTextModule
   ],
   providers: [{
     provide : HTTP_INTERCEPTORS,

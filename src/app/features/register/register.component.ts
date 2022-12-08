@@ -29,7 +29,6 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
-
       firstName : new FormControl(''),
       lastName : new FormControl(''),
       role : new FormControl(''),

@@ -1,14 +1,9 @@
-<form [formGroup]="createCourseForm">
+<form [formGroup]="createDepartmentForm">
 
     <br><br>
     <span class="p-float-label">
-        <input id="float-input-title" type="text" formControlName="title" pInputText> 
-        <label for="float-input">Title</label>
-    </span>
-    <br><br>
-    <span class="p-float-label">
-        <input id="float-input-reference" type="text" formControlName="reference" pInputText> 
-        <label for="float-input">Reference</label>
+        <input id="float-input-name" type="text" formControlName="name" pInputText> 
+        <label for="float-input">name</label>
     </span>
     <br><br>
     <span class="p-float-label">
@@ -17,72 +12,28 @@
     </span>
     <br><br>
     <span class="p-float-label">
-        <input id="float-input-overview" type="text" formControlName="overview" pInputText> 
-        <label for="float-input">Overview</label>
+        <input id="float-input-summary" type="text" formControlName="summary" pInputText> 
+        <label for="float-input">Summary</label>
     </span>
     <br><br>
     <span class="p-float-label">
-        <input id="float-input-type" type="text" formControlName="type" pInputText> 
-        <label for="float-input">Type</label>
+        <input id="float-input-logo" type="text" formControlName="logo" pInputText> 
+        <label for="float-input">Logo</label>
     </span>
     <br><br>
     <span class="p-float-label">
-        <input id="float-input-coursePrice" type="text" formControlName="coursePrice" pInputText> 
-        <label for="float-input">Course Price</label>
+        <input id="float-input-backgroundImage" type="text" formControlName="backgroundImage" pInputText> 
+        <label for="float-input">Background Image</label>
     </span>
     <br><br>
     <span class="p-float-label">
-        <input id="float-input-category" type="text" formControlName="category" pInputText> 
-        <label for="float-input">Category</label>
+        <input id="float-input-locationId" type="text" formControlName="locationId" pInputText> 
+        <label for="float-input">Location Id</label>
     </span>
-    <br><br>
-    <span class="p-float-label">
-        <input id="float-input-credits" type="text" formControlName="credits" pInputText> 
-        <label for="float-input">Credits</label>
-    </span>
-    <br><br>
-    <span class="p-float-label">
-        <input id="float-input-level" type="text" formControlName="level" pInputText> 
-        <label for="float-input">Level</label>
-    </span>
-    <br><br>
-    <span class="p-float-label">
-        <input id="float-input-deliveryMethod" type="text" formControlName="deliveryMethod" pInputText> 
-        <label for="float-input">Delivery Method</label>
-    </span>
-    <br><br>
-    <span class="p-float-label">
-        <input id="float-input-status" type="text" formControlName="status" pInputText> 
-        <label for="float-input">Status</label>
-    </span>
-    <br><br>
-    <span class="p-float-label">
-        <input id="float-input-publishStatus" type="text" formControlName="publishStatus" pInputText> 
-        <label for="float-input">Publish Status</label>
-    </span>
-    <br><br>
-    <span class="p-float-label">
-        <input id="float-input-publishAt" type="text" formControlName="publishAt" pInputText> 
-        <label for="float-input">Publish Status</label>
-    </span>
-    <br><br>
-    <span class="p-float-label">
-        <input id="float-input-unpublishAt" type="text" formControlName="unpublishAt" pInputText> 
-        <label for="float-input">Unpublish Status</label>
-    </span>
-    <br><br>
-    <span class="p-float-label">
-        <input id="float-input-departmentId" type="text" formControlName="departmentId" pInputText> 
-        <label for="float-input">Department</label>
-    </span>
-    <br><br>
-    <span class="p-float-label">
-        <input id="float-input-trainer" type="text" formControlName="trainer" pInputText> 
-        <label for="float-input">Trainer</label>
-    </span>
+    
     <br><br>
     <div>
-        <button (click)="createCourse(course)">Create</button>
+        <button (click)="createDepartment(department)">Create</button>
     </div>
 
 

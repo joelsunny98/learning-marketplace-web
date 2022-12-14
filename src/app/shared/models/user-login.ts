@@ -1,4 +1,4 @@
-export class UserLogin {
-    username = '';
-    password = ''
+export interface UserLogin {
+    username? : string;
+    password? : string;
 } 

@@ -1,18 +1,18 @@
-export class Course {
-    title  = "";
-    reference = "";
-    subtitle  = "";
-    overview = "";
-    type = "";
-    coursePrice = "";
-    category = "";
-    credits = "";
-    level = "";
-    deliveryMethod = "";
-    status = "";
-    publishStatus = "";
-    publishAt ="";
-    unpublishAt ="";
-    departmentId = "";
-    trainerId ="";  
+export interface Course {
+    title? : string;
+    reference? : string;
+    subtitle? : string;
+    overview? : string;
+    type? : string;
+    coursePrice? : string;
+    category? : string;
+    credits? : string;
+    level? : string;
+    deliveryMethod? : string;
+    status? : string;
+    publishStatus? : string;
+    publishAt? : string;
+    unpublishAt? : string;
+    departmentId? : string;
+    trainerId? : string;  
 }

@@ -1,8 +1,8 @@
-export class UserRegister {
+export interface UserRegister {
     
-    firstName = '';
-    lastName = '';
-    role = 1;
-    username = '';
-    password = '';
+    firstName? : string;
+    lastName? : string;
+    role ? : number;
+    username? : string;
+    password? : string;
 }

@@ -1,5 +1,5 @@
 export interface LearnerApplication {
-    status : string;
-    learnerId : string;
-    courseId : string;
+    status? : string;
+    learnerId? : string;
+    courseId? : string;
 }

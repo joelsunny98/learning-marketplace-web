@@ -11,7 +11,7 @@ import { CourseService } from 'src/app/shared/services/course.service';
 export class CreateCourseComponent {
   createCourseForm! : FormGroup;
 
-  course = new Course();
+  course! : Course;
 
   constructor(private courseService : CourseService, private fb : FormBuilder) {}
 

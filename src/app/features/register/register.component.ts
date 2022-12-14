@@ -12,7 +12,7 @@ export class RegisterComponent implements OnInit {
 
   registerForm! : FormGroup;
 
-  user = new UserRegister();
+  user! : UserRegister;
 
   constructor(private authService : AuthService, private fb : FormBuilder) { }
 

@@ -12,7 +12,7 @@ export class CreateDepartmentComponent {
 
   createDepartmentForm! : FormGroup;
 
-  department = new Department();
+  department!: Department;
 
   constructor(private departmentService : DepartmentService, private fb : FormBuilder) {}
 

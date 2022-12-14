@@ -1,8 +1,8 @@
-export class Department {
-    name = "";
-    subtitle = "";
-    logo = "";
-    backgroundImage = ""; 
-    summary = "";
-    locationId ="";
+export interface Department {
+    name? : string;
+    subtitle? : string;
+    logo? : string;
+    backgroundImage? : string;
+    summary? : string;
+    locationId? : string;
 }

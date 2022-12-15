@@ -1,4 +1,4 @@
-export interface UserLogin {
+export class UserLogin {
     username? : string;
     password? : string;
 } 

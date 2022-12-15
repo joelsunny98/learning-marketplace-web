@@ -3,7 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {InputTextModule} from 'primeng/inputtext';
+import { InputTextModule } from 'primeng/inputtext';
+import { DataViewModule}  from 'primeng/dataview';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { RegisterComponent } from './features/register/register.component';
 import { AuthInterceptor } from './shared/services/auth.interceptor';
 import { CreateDepartmentComponent } from './features/create-department/create-department.component';
 import { CreateCourseComponent } from './features/create-course/create-course.component';
+import { ViewDepartmentComponent } from './features/view-department/view-department.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { CreateCourseComponent } from './features/create-course/create-course.co
     LoginComponent,
     RegisterComponent,
     CreateDepartmentComponent,
-    CreateCourseComponent
+    CreateCourseComponent,
+    ViewDepartmentComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,8 @@ import { CreateCourseComponent } from './features/create-course/create-course.co
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    InputTextModule
+    InputTextModule,
+    DataViewModule
   ],
   providers: [{
     provide : HTTP_INTERCEPTORS,

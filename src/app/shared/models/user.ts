@@ -1,5 +1,5 @@
 export interface User{
-    firstName : string;
-    lastName : string;
-    role : number;
+    firstName? : string;
+    lastName? : string;
+    role? : number;
 }

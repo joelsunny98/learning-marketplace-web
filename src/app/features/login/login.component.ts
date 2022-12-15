@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
   
   loginForm!: FormGroup;
 
-  user! : UserLogin;
+  user = new UserLogin();
   
   constructor(private authService : AuthService, private fb : FormBuilder) { }
 

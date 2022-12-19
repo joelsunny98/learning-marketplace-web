@@ -4,6 +4,7 @@ import { CreateCourseComponent } from './features/create-course/create-course.co
 import { CreateDepartmentComponent } from './features/create-department/create-department.component';
 import { LoginComponent } from './features/login/login.component';
 import { RegisterComponent } from './features/register/register.component';
+import { ViewCoursesComponent } from './features/view-courses/view-courses.component';
 import { ViewDepartmentComponent } from './features/view-department/view-department.component';
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path : 'create-course', component: CreateCourseComponent },
   { path : 'create-department', component : CreateDepartmentComponent },
   { path : 'view-department', component : ViewDepartmentComponent },
+  { path : 'view-course', component : ViewCoursesComponent },
   { path : '', redirectTo : 'register', pathMatch : 'full' } 
 ];
 

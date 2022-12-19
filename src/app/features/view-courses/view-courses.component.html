@@ -1,0 +1,36 @@
+<div class="card">  
+    <p-dataView #dv [value]="courses" [paginator]="true" [rows]="9" filterBy="name" layout="grid">
+        
+        <ng-template pTemplate="header">
+            <span class="p-input-icon-left mb-2 md:mb-0">
+                <i class="pi pi-search"></i>
+                <input type="search" pInputText placeholder="Search by Name">
+            </span>
+            <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+        </ng-template>
+
+        <ng-template let-course pTemplate="listItem">
+            <div class="course-list-item">
+                <div class="course-list-detail">
+                    <div class="course-name">{{ course.title }}</div>
+                    <div class="course-price">{{ course.coursePrice }}</div>
+                </div>
+            </div>
+        </ng-template>
+
+        <ng-template let-course pTemplate="gridItem">
+            <div class="course-grid-item-card">
+                <div class="course-grid-item-top">
+                    <div class="course-name">{{ course.title }}</div>
+                </div>
+                <div class="course-grid-item-content">
+                    <div class="course-subtitle">{{ course.subtitle }}</div>
+                    <div class="course-price">{{ course.coursePrice }}</div>
+                    <div class=""></div>
+                </div>
+                <div class="course-grid-item-bottom"></div>
+            </div>
+        </ng-template>
+
+    </p-dataView>
+</div>

@@ -20,6 +20,7 @@ import { AuthInterceptor } from './shared/services/auth.interceptor';
 import { CreateDepartmentComponent } from './features/create-department/create-department.component';
 import { CreateCourseComponent } from './features/create-course/create-course.component';
 import { ViewDepartmentComponent } from './features/view-department/view-department.component';
+import { ViewCoursesComponent } from './features/view-courses/view-courses.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ViewDepartmentComponent } from './features/view-department/view-departm
     RegisterComponent,
     CreateDepartmentComponent,
     CreateCourseComponent,
-    ViewDepartmentComponent
+    ViewDepartmentComponent,
+    ViewCoursesComponent
   ],
   imports: [
     BrowserModule,

@@ -9,16 +9,16 @@
             <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
         </ng-template>
 
-        <ng-template let-product pTemplate="listItem">
+        <ng-template let-department pTemplate="listItem">
             <div class="department-list-item">
-                <div class="department-list-detail" *ngFor="let department of departments">
+                <div class="department-list-detail" >
                     <div class="department-name">{{ department.name }}</div>
                 </div>
             </div>
         </ng-template>
 
-        <ng-template let-product pTemplate="gridItem">
-            <div class="department-grid-item-card" *ngFor="let department of departments">
+        <ng-template let-department pTemplate="gridItem">
+            <div class="department-grid-item-card">
                 <div class="department-grid-item-top">
                     <div class="department-name">{{ department.name }}</div>
                 </div>

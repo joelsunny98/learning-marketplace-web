@@ -9,7 +9,7 @@ import { DepartmentService } from 'src/app/shared/services/department.service';
   styleUrls: ['./view-department.component.scss']
 })
 export class ViewDepartmentComponent {
-[x: string]: any;
+
   departments! : Department[];
 
   constructor(private departmentService : DepartmentService, private primengConfig : PrimeNGConfig) { }
@@ -17,6 +17,7 @@ export class ViewDepartmentComponent {
   ngOnInit() {
     this.departmentService.getDepartmentList().subscribe(data => {
       this.departments = data;
+      console.log(this.departments);
     });
     
     this.primengConfig.ripple = true;

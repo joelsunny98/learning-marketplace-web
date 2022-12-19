@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
-import { DataViewModule}  from 'primeng/dataview';
+import { DataViewModule }  from 'primeng/dataview';
+import {ButtonModule } from 'primeng/button';
+import { PanelModule } from 'primeng/panel';
+import { DropdownModule } from 'primeng/dropdown';
+import { DialogModule } from 'primeng/dialog';
+import { RippleModule } from 'primeng/ripple';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,7 +37,13 @@ import { ViewDepartmentComponent } from './features/view-department/view-departm
     FormsModule,
     ReactiveFormsModule,
     InputTextModule,
-    DataViewModule
+    DataViewModule,
+    BrowserAnimationsModule,
+    ButtonModule,
+    PanelModule,
+    DropdownModule,
+    DialogModule,
+    RippleModule
   ],
   providers: [{
     provide : HTTP_INTERCEPTORS,

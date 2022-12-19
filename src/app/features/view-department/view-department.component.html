@@ -1,1 +1,33 @@
-<p>view-department works!</p>
+<div class="card">
+    <p-dataView #dv [value]="departments" [paginator]="true" [rows]="9" filterBy="name" layout="grid">
+        
+        <ng-template pTemplate="header">
+            <span class="p-input-icon-left mb-2 md:mb-0">
+                <i class="pi pi-search"></i>
+                <input type="search" pInputText placeholder="Search by Name">
+            </span>
+            <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+        </ng-template>
+
+        <ng-template let-product pTemplate="listItem">
+            <div class="department-list-item">
+                <div class="department-list-detail" *ngFor="let department of departments">
+                    <div class="department-name">{{ department.name }}</div>
+                </div>
+            </div>
+        </ng-template>
+
+        <ng-template let-product pTemplate="gridItem">
+            <div class="department-grid-item-card" *ngFor="let department of departments">
+                <div class="department-grid-item-top">
+                    <div class="department-name">{{ department.name }}</div>
+                </div>
+                <div class="department-grid-item-content">
+                    <div class="department-subtitle">{{ department.subtitle }}</div>
+                </div>
+                <div class="department-grid-item-bottom"></div>
+            </div>
+        </ng-template>
+
+    </p-dataView>
+</div>

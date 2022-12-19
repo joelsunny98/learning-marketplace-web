@@ -4,12 +4,14 @@ import { CreateCourseComponent } from './features/create-course/create-course.co
 import { CreateDepartmentComponent } from './features/create-department/create-department.component';
 import { LoginComponent } from './features/login/login.component';
 import { RegisterComponent } from './features/register/register.component';
+import { ViewDepartmentComponent } from './features/view-department/view-department.component';
 
 const routes: Routes = [
   { path : 'login', component: LoginComponent},
   { path : 'register', component : RegisterComponent },
   { path : 'create-course', component: CreateCourseComponent },
   { path : 'create-department', component : CreateDepartmentComponent },
+  { path : 'view-department', component : ViewDepartmentComponent },
   { path : '', redirectTo : 'register', pathMatch : 'full' } 
 ];
 

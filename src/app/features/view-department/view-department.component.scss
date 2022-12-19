@@ -1,0 +1,16 @@
+:host ::ng-deep {
+    .p-dropdown {
+        width: 14rem;
+        font-weight: normal;
+    }
+
+    .department-name {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    .department-list-detail {
+        flex: 1 1 0;
+    }
+
+}

@@ -12,19 +12,12 @@ export class CreateDepartmentComponent {
 
   createDepartmentForm! : FormGroup;
 
-  department!: Department;
 
   constructor(private departmentService : DepartmentService, private fb : FormBuilder) {}
 
   createDepartment(){
     
     console.log(this.createDepartmentForm.value);
-    // department.name = this.createDepartmentForm.controls['name'].value;
-    // department.subtitle = this.createDepartmentForm.controls['subtitle'].value;
-    // department.summary = this.createDepartmentForm.controls['summary'].value;
-    // department.logo = this.createDepartmentForm.controls['logo'].value;
-    // department.backgroundImage = this.createDepartmentForm.controls['backgroundImage'].value;
-    // department.locationId = this.createDepartmentForm.controls['locationId'].value;
 
     this.departmentService.createDepartment(this.createDepartmentForm.value).subscribe();
   }

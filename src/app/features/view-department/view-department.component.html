@@ -18,14 +18,17 @@
         </ng-template>
 
         <ng-template let-department pTemplate="gridItem">
-            <div class="department-grid-item-card">
-                <div class="department-grid-item-top">
-                    <div class="department-name">{{ department.name }}</div>
+            <div class="col-12 md:col-4">
+                <div class="department-grid-item card">
+                    <div class="department-grid-item-top">
+                        
+                    </div>
+                    <div class="department-grid-item-content">
+                        <div class="department-name">{{ department.name }}</div>
+                        <div class="department-subtitle">{{ department.subtitle }}</div>
+                    </div>
+                    <div class="department-grid-item-bottom"></div>
                 </div>
-                <div class="department-grid-item-content">
-                    <div class="department-subtitle">{{ department.subtitle }}</div>
-                </div>
-                <div class="department-grid-item-bottom"></div>
             </div>
         </ng-template>
 

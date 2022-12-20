@@ -21,8 +21,8 @@ export class LoginComponent implements OnInit {
     user.username = this.loginForm.controls['username'].value;
     user.password = this.loginForm.controls['password'].value;
 
-    this.authService.login(user).subscribe((token : string) => {
-      localStorage.setItem('authToken', token);
+    this.authService.login(user).subscribe((token : any) => {
+      localStorage.setItem('authToken', token.accessToken);
     })
   }
 

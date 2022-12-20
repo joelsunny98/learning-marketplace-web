@@ -1,10 +1,6 @@
 
 
 <form [formGroup]="loginForm">
-    
-    Value : {{ loginForm.value | json }} 
-
-    <hr>
     <br><br>
     <div class="field">
         <span class="p-float-label">
@@ -12,16 +8,16 @@
             <label for="float-input-username">Username</label>
         </span>
     
-    <br><br>
-    <span class="p-float-label">
-        <input id="float-input-password" type="text" formControlName="password" pInputText> 
-        <label for="float-input-password">Password</label>
-    </span>
+        <br><br>
+        <span class="p-float-label">
+            <input id="float-input-password" type="text" formControlName="password" pInputText> 
+            <label for="float-input-password">Password</label>
+        </span>
 
-    <br><br>
-    <div>
-        <button (click)="login(user)">Login</button>
-    </div>
+        <br><br>
+        <div>
+            <button (click)="login(user)">Login</button>
+        </div>
     </div>
 
 </form>

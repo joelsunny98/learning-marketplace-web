@@ -11,6 +11,8 @@ import { PanelModule } from 'primeng/panel';
 import { DropdownModule } from 'primeng/dropdown';
 import { DialogModule } from 'primeng/dialog';
 import { RippleModule } from 'primeng/ripple';
+import { MenubarModule } from 'primeng/menubar';
+import { MenuItem } from 'primeng/api';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +23,7 @@ import { CreateDepartmentComponent } from './features/create-department/create-d
 import { CreateCourseComponent } from './features/create-course/create-course.component';
 import { ViewDepartmentComponent } from './features/view-department/view-department.component';
 import { ViewCoursesComponent } from './features/view-courses/view-courses.component';
+import { NavbarComponent } from './features/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,8 @@ import { ViewCoursesComponent } from './features/view-courses/view-courses.compo
     CreateDepartmentComponent,
     CreateCourseComponent,
     ViewDepartmentComponent,
-    ViewCoursesComponent
+    ViewCoursesComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +49,9 @@ import { ViewCoursesComponent } from './features/view-courses/view-courses.compo
     PanelModule,
     DropdownModule,
     DialogModule,
-    RippleModule
+    RippleModule,
+    MenubarModule,
+    
   ],
   providers: [{
     provide : HTTP_INTERCEPTORS,

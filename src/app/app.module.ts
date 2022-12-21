@@ -24,6 +24,7 @@ import { CreateCourseComponent } from './features/create-course/create-course.co
 import { ViewDepartmentComponent } from './features/view-department/view-department.component';
 import { ViewCoursesComponent } from './features/view-courses/view-courses.component';
 import { NavbarComponent } from './features/navbar/navbar.component';
+import { ListComponent } from './features/list/list.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { NavbarComponent } from './features/navbar/navbar.component';
     CreateCourseComponent,
     ViewDepartmentComponent,
     ViewCoursesComponent,
-    NavbarComponent
+    NavbarComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,

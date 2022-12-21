@@ -1,36 +1,65 @@
-<div class="card">  
-    <p-dataView #dv [value]="courses" [paginator]="true" [rows]="9" filterBy="name" layout="grid">
-        
-        <ng-template pTemplate="header">
-            <span class="p-input-icon-left mb-2 md:mb-0">
-                <i class="pi pi-search"></i>
-                <input type="search" pInputText placeholder="Search by Name">
-            </span>
-            <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
-        </ng-template>
+<div class="grid">
+	<div class="col-12">
+		<div class="card">
+			<h5>DataView</h5>
+			<p-dataView #dv [value]="courses" [paginator]="true" [rows]="9" filterBy="name" layout="grid">
+				<ng-template pTemplate="header">
+					<div class="flex flex-column md:flex-row md:justify-content-between gap-2">
+						
+						<span class="p-input-icon-left">
+                            <i class="pi pi-search"></i>
+                            <input type="search" pInputText placeholder="Search by Name">
+                        </span>	
+						<p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+					</div>
+				</ng-template>
 
-        <ng-template let-course pTemplate="listItem">
-            <div class="course-list-item">
-                <div class="course-list-detail">
-                    <div class="course-name">{{ course.title }}</div>
-                    <div class="course-price">{{ course.coursePrice }}</div>
-                </div>
-            </div>
-        </ng-template>
+				<ng-template let-course pTemplate="listItem">
+					<div class="col-12">
+						<div class="flex flex-column md:flex-row align-items-center p-3 w-full">
+							<img [src]="'assets/demo/images/product/'" [alt]="course.reference" class="my-4 md:my-0 w-9 md:w-10rem shadow-2 mr-5"/>
+							<div class="flex-1 flex flex-column align-items-center text-center md:text-left">
+								<div class="font-bold text-2xl">{{course.title}}</div>
+								<div class="mb-2">{{course.subtitle}}</div>
+								
+								<div class="flex align-items-center mt-2">
+									<i class="pi pi-tag mr-2"></i>
+									<span class="font-semibold">{{course.category}}</span>
+								</div>
+							</div>
+							<div class="flex flex-row md:flex-column justify-content-between w-full md:w-auto align-items-center md:align-items-end mt-5 md:mt-0">
+								<span class="text-2xl font-semibold mb-2 align-self-center md:align-self-end">${{course.coursePrice}}</span>
+								<!-- <p-button icon="pi pi-shopping-cart" label="Add to Cart" [disabled]="product.inventoryStatus === 'OUTOFSTOCK'" styleClass="mb-2 p-button-sm"></p-button> -->
+								<span [class]="'product-badge status-' + course.deliveryMethod.toLowerCase()">{{course.deliveryMethod}}</span>
+							</div>
+						</div>
+					</div>
+				</ng-template>
 
-        <ng-template let-course pTemplate="gridItem">
-            <div class="course-grid-item card">
-                <div class="course-grid-item-top">
-                    <div class="course-name">{{ course.title }}</div>
-                </div>
-                <div class="course-grid-item-content">
-                    <div class="course-subtitle">{{ course.subtitle }}</div>
-                    <div class="course-price">{{ course.coursePrice }}</div>
-                    <div class=""></div>
-                </div>
-                <div class="course-grid-item-bottom"></div>
-            </div>
-        </ng-template>
-
-    </p-dataView>
+				<ng-template let-course pTemplate="gridItem">
+					<div class="col-12 md:col-4">
+						<div class="card m-3 border-1 surface-border">
+							<div class="flex flex-wrap gap-2 align-items-center justify-content-between mb-2">
+								<div class="flex align-items-center">
+									<i class="pi pi-tag mr-2"></i>
+									<span class="font-semibold">{{course.category}}</span>
+								</div>
+								<span [class]="'product-badge status-' + course.deliveryMethod.toLowerCase()">{{course.deliveryMethod}}</span>
+							</div>
+							<div class="flex flex-column align-items-center text-center mb-3">
+								<img [src]="'assets/demo/images/product/'" [alt]="course.reference" class="w-9 shadow-2 my-3 mx-0"/>
+								<div class="text-2xl font-bold">{{course.title}}</div>
+								<div class="mb-3">{{course.subtitle}}</div>								
+							</div>
+							<div class="flex align-items-center justify-content-between">
+								<span class="text-2xl font-semibold">${{course.coursePrice}}</span>
+								<p-button icon="pi pi-shopping-cart" ></p-button>
+							</div>
+						</div>
+					</div>
+				</ng-template>
+			</p-dataView>
+		</div>
+	</div>
 </div>
+

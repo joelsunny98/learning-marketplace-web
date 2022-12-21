@@ -16,12 +16,8 @@ export class LoginComponent implements OnInit {
   
   constructor(private authService : AuthService, private fb : FormBuilder) { }
 
-  login(user : UserLogin) {
-
-    user.username = this.loginForm.controls['username'].value;
-    user.password = this.loginForm.controls['password'].value;
-
-    this.authService.login(user).subscribe((token : any) => {
+  login() {
+    this.authService.login(this.loginForm.value).subscribe((token : any) => {
       localStorage.setItem('authToken', token.accessToken);
     })
   }

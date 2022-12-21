@@ -12,7 +12,8 @@ import { DropdownModule } from 'primeng/dropdown';
 import { DialogModule } from 'primeng/dialog';
 import { RippleModule } from 'primeng/ripple';
 import { MenubarModule } from 'primeng/menubar';
-import { MenuItem } from 'primeng/api';
+import { PasswordModule } from 'primeng/password';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,7 +25,6 @@ import { CreateCourseComponent } from './features/create-course/create-course.co
 import { ViewDepartmentComponent } from './features/view-department/view-department.component';
 import { ViewCoursesComponent } from './features/view-courses/view-courses.component';
 import { NavbarComponent } from './features/navbar/navbar.component';
-import { ListComponent } from './features/list/list.component';
 
 @NgModule({
   declarations: [
@@ -35,8 +35,7 @@ import { ListComponent } from './features/list/list.component';
     CreateCourseComponent,
     ViewDepartmentComponent,
     ViewCoursesComponent,
-    NavbarComponent,
-    ListComponent
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -53,6 +52,7 @@ import { ListComponent } from './features/list/list.component';
     DialogModule,
     RippleModule,
     MenubarModule,
+    PasswordModule
     
   ],
   providers: [{

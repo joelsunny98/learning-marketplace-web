@@ -12,19 +12,12 @@ export class RegisterComponent implements OnInit {
 
   registerForm! : FormGroup;
 
-  user! : UserRegister;
+  
 
   constructor(private authService : AuthService, private fb : FormBuilder) { }
 
-  register(user : UserRegister) {
-
-    user.firstName = this.registerForm.controls['firstName'].value;
-    user.lastName = this.registerForm.controls['lastName'].value;
-    user.role = Number(this.registerForm.controls['role'].value);
-    user.username = this.registerForm.controls['username'].value;
-    user.password = this.registerForm.controls['password'].value;
-
-    this.authService.register(user).subscribe();
+  register() {
+    this.authService.register(this.registerForm.value).subscribe();
   }
 
   ngOnInit(): void {

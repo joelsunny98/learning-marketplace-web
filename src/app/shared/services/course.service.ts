@@ -12,8 +12,15 @@ export class CourseService {
 
   constructor(private http : HttpClient) { }
 
-  public getCourseList(): Observable<Course[]> {
-    return this.http.get<Course[]>(`${environment.apiUrl}/${this.url}`);
+  public getCourseList(name? : any): Observable<Course[]> {
+    if(name == undefined) 
+    {
+      return this.http.get<Course[]>(`${environment.apiUrl}/${this.url}`);
+    }
+    else
+    {
+      return this.http.get<Course[]>(`${environment.apiUrl}/${this.url}?name=${name}`);
+    }
   }
 
   public getCourse(id : string) : Observable<Course> {

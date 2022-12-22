@@ -3,15 +3,14 @@
 		<div class="card">
 			<h5>DataView</h5>
 			<p-dataView #dv [value]="courses" [paginator]="true" [rows]="9" filterBy="name" layout="grid">
-				<ng-template pTemplate="header">
-					<div class="flex flex-column md:flex-row md:justify-content-between gap-2">
-						
-						<span class="p-input-icon-left">
-                            <i class="pi pi-search"></i>
-                            <input type="search" pInputText placeholder="Search by Name">
-                        </span>	
-						<p-dataViewLayoutOptions></p-dataViewLayoutOptions>
-					</div>
+				<ng-template pTemplate="header">				
+                        <form [formGroup]="search" class="flex flex-column md:flex-row md:justify-content-between gap-2">
+                            <span class="p-input-icon-left">
+                                <i class="pi pi-search"></i>
+                                <input type="text" pInputText placeholder="Search by Name" formControlName="name">
+                            </span>
+						    <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+					    </form>                    
 				</ng-template>
 
 				<ng-template let-course pTemplate="listItem">
@@ -21,7 +20,7 @@
 							<div class="flex-1 flex flex-column align-items-center text-center md:text-left">
 								<div class="font-bold text-2xl">{{course.title}}</div>
 								<div class="mb-2">{{course.subtitle}}</div>
-								
+
 								<div class="flex align-items-center mt-2">
 									<i class="pi pi-tag mr-2"></i>
 									<span class="font-semibold">{{course.category}}</span>
@@ -49,7 +48,7 @@
 							<div class="flex flex-column align-items-center text-center mb-3">
 								<img [src]="'assets/demo/images/product/'" [alt]="course.reference" class="w-9 shadow-2 my-3 mx-0"/>
 								<div class="text-2xl font-bold">{{course.title}}</div>
-								<div class="mb-3">{{course.subtitle}}</div>								
+								<div class="mb-3">{{course.subtitle}}</div>
 							</div>
 							<div class="flex align-items-center justify-content-between">
 								<span class="text-2xl font-semibold">${{course.coursePrice}}</span>

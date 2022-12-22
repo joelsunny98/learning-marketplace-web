@@ -5,14 +5,13 @@
 			<h5>DataView</h5>
 			<p-dataView #dv [value]="departments" [paginator]="true" [rows]="9" filterBy="name" layout="grid">
 				<ng-template pTemplate="header">
-					<div class="flex flex-column md:flex-row md:justify-content-between gap-2">
-						
+					<form [formGroup]="search" class="flex flex-column md:flex-row md:justify-content-between gap-2">
 						<span class="p-input-icon-left">
                             <i class="pi pi-search"></i>
-                            <input type="search" pInputText placeholder="Search by Name">
+                            <input type="search" pInputText placeholder="Search by Name" formControlName="name">
                         </span>	
 						<p-dataViewLayoutOptions></p-dataViewLayoutOptions>
-					</div>
+					</form>
 				</ng-template>
 
 				<ng-template let-department pTemplate="listItem">

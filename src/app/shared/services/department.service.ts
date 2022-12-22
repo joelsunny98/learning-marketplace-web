@@ -12,8 +12,16 @@ export class DepartmentService {
 
   constructor(private http : HttpClient) { }
 
-  public getDepartmentList(): Observable<Department[]> {
-    return this.http.get<Department[]>(`${environment.apiUrl}/${this.url}`);
+  public getDepartmentList(name? : any): Observable<Department[]> {
+    if(name == undefined)
+    {
+      return this.http.get<Department[]>(`${environment.apiUrl}/${this.url}`);
+    }
+    else 
+    {
+      return this.http.get<Department[]>(`${environment.apiUrl}/${this.url}?name=${name}`);
+    }
+    
   }
 
   public getDepartment(id : string) : Observable<Department> {

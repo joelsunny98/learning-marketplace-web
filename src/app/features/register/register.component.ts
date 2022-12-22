@@ -12,11 +12,16 @@ export class RegisterComponent implements OnInit {
 
   registerForm! : FormGroup;
 
+  dropdownItems = [
+    { name : 'Learner', code : 2 },
+    { name :  'Trainer', code : 3 }
+  ];
   
 
   constructor(private authService : AuthService, private fb : FormBuilder) { }
 
   register() {
+    console.log(this.registerForm.value);
     this.authService.register(this.registerForm.value).subscribe();
   }
 

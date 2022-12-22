@@ -55,8 +55,11 @@
                     <label for="lastName" class="block text-900 text-xl font-medium mb-2">Last Name</label>
                     <input id="lastName" formControlName="lastName" type="text" placeholder="Doe" pInputText class="w-full md:w-30rem mb-5" style="padding:1rem">
 
+                    <div class="w-full md:w-30rem mb-5">
                     <label for="role" class="block text-900 text-xl font-medium mb-2">Role</label>
-                    <input id="role" formControlName="role" type="number" placeholder="Learner/Trainer" pInputText class="w-full md:w-30rem mb-5" style="padding:1rem">
+                    <!-- <input id="role" formControlName="role" type="number" placeholder="Learner/Trainer" pInputText class="w-full md:w-30rem mb-5" style="padding:1rem"> -->
+                    <p-dropdown [options]="dropdownItems" optionLabel="name" optionValue="code" formControlName="role" class="w-full md:w-30rem mb-5" ></p-dropdown>
+                    </div>
 
                     <label for="username" class="block text-900 text-xl font-medium mb-2">Email</label>
                     <input id="username" formControlName="username" type="email" placeholder="Email address" pInputText class="w-full md:w-30rem mb-5" style="padding:1rem">

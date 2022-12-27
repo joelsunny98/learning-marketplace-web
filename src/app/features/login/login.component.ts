@@ -3,6 +3,7 @@ import { UserLogin } from 'src/app/shared/models/user-login';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Token } from 'src/app/shared/models/token';
 
 @Component({
   selector: 'app-login',
@@ -18,9 +19,11 @@ export class LoginComponent implements OnInit {
   constructor(private authService : AuthService, private fb : FormBuilder, private readonly router: Router,) { }
 
   login() {
-    this.authService.login(this.loginForm.value).subscribe((token : any) => {
+    this.authService.login(this.loginForm.value).subscribe((token : Token) => {
       localStorage.setItem('authToken', token.accessToken);
+      localStorage.setItem('refreshToken', token.refreshToken)
     })
+    this.router.navigate(['/view-department']);
   }
 
   ngOnInit() : void {

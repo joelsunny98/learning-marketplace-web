@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { DataViewModule }  from 'primeng/dataview';
-import {ButtonModule } from 'primeng/button';
+import { ButtonModule } from 'primeng/button';
 import { PanelModule } from 'primeng/panel';
 import { DropdownModule } from 'primeng/dropdown';
 import { DialogModule } from 'primeng/dialog';
@@ -25,6 +25,7 @@ import { CreateCourseComponent } from './features/create-course/create-course.co
 import { ViewDepartmentComponent } from './features/view-department/view-department.component';
 import { ViewCoursesComponent } from './features/view-courses/view-courses.component';
 import { NavbarComponent } from './features/navbar/navbar.component';
+import { AuthGuard } from './shared/services/auth.guard';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { NavbarComponent } from './features/navbar/navbar.component';
     provide : HTTP_INTERCEPTORS,
     useClass : AuthInterceptor,
     multi : true
-  }],
+  }, 
+  AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

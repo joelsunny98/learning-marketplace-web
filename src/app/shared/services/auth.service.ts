@@ -34,14 +34,6 @@ export class AuthService {
 
   //return boolean value for isLoggedIn
   public isLoggedIn(): any {
-  //   const existingToken = localStorage.getItem('authToken');
-
-  //   if (!existingToken) {
-  //     return false;
-  //   }
-  //   return existingToken;
-  return !!localStorage.getItem('authToken');
-
-  
+  return !!localStorage.getItem('authToken'); 
   }
 }

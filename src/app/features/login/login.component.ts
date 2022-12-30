@@ -35,9 +35,9 @@ export class LoginComponent implements OnInit {
 
     this.loginForm.valueChanges.subscribe(console.log)
 
-    // if(this.authService.isLoggedIn()){
-    //   this.router.navigate(['/view-department']);
-    // }
+    if(this.authService.isLoggedIn()){
+      this.router.navigate(['/view-department']);
+    }
   }
 
 }

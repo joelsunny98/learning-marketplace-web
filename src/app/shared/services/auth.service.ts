@@ -34,6 +34,7 @@ export class AuthService {
 
   //return boolean value for isLoggedIn
   public isLoggedIn(): any {
-  return !!localStorage.getItem('authToken'); 
+  return !!localStorage.getItem('authToken');
+ 
   }
 }

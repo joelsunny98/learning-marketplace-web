@@ -52,8 +52,8 @@
 							</div>
 							<div class="flex align-items-center justify-content-between">
 								<span class="text-2xl font-semibold">${{course.coursePrice}}</span>
-								<p-button icon="pi pi-shopping-cart" ></p-button>
-								<p-button (click)="openCourse(course.id)">APPLY</p-button>
+								
+								<p-button (click)="openCourse(course.id)" [routerLink]="'apply-course'">APPLY</p-button>
 							</div>
 						</div>
 					</div>

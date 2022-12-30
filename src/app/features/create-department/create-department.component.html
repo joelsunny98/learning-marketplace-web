@@ -1,46 +1,34 @@
-<form [formGroup]="createDepartmentForm">
-
-    <br><br>
-    
-    <span class="p-float-label">
-        <input id="float-input-name" type="text" formControlName="name" pInputText> 
-        <label for="float-input">Name</label>
-    </span>
-    <br><br>
-
-    <span class="p-float-label">
-        <input id="float-input-subtitle" type="text" formControlName="subtitle" pInputText> 
-        <label for="float-input">Subtitle</label>
-    </span>
-    <br><br>
-
-    <span class="p-float-label">
-        <input id="float-input-summary" type="text" formControlName="summary" pInputText> 
-        <label for="float-input">Summary</label>
-    </span>
-    <br><br>
-
-    <span class="p-float-label">
-        <input id="float-input-logo" type="text" formControlName="logo" pInputText> 
-        <label for="float-input">Logo</label>
-    </span>
-    <br><br>
-
-    <span class="p-float-label">
-        <input id="float-input-backgroundImage" type="text" formControlName="backgroundImage" pInputText> 
-        <label for="float-input">Background Image</label>
-    </span>
-    <br><br>
-
-    <span class="p-float-label">
-        <input id="float-input-locationId" type="text" formControlName="locationId" pInputText> 
-        <label for="float-input">Location Id</label>
-    </span>
-    
-    <br><br>
-    <div>
-        <button (click)="createDepartment()">Create</button>
+<form [formGroup]="createDepartmentForm" >
+    <div class="col-12 md:col-12">
+		<div class="card p-fluid">
+			<h5>Create Department</h5>
+			<div class="field">
+				<label htmlFor="name">Name</label>
+				<input pInputText id="name" type="text" formControlName="name" />
+			</div>
+			<div class="field">
+				<label htmlFor="subtitle">Subtitle</label>
+				<input pInputText id="subtitle" type="text" formControlName="subtitle"/>
+			</div>
+			<div class="field">
+				<label htmlFor="summary">Summary</label>
+				<input pInputText id="summary" type="text" formControlName="summary"/>
+			</div>
+            <div class="field">
+				<label htmlFor="logo">Logo</label>
+				<input pInputText id="logo" type="text" formControlName="logo"/>
+			</div>
+            <div class="field">
+				<label htmlFor="BackGroundImage">Background Image</label>
+				<input pInputText id="backgroundImage" type="text" formControlName="backgroundImage"/>
+			</div>
+            <div class="field">
+				<label htmlFor="locationId">Location Id</label>
+				<input pInputText id="locationId" type="text" formControlName="locationId" [defaultValue]="'placeholder'"/>
+			</div>
+            <br>
+            <button pButton pRipple label="Create" class="w-full p-3 text-xl" (click)="createDepartment()" ></button>
+		</div>
     </div>
-
 
 </form>

@@ -17,7 +17,7 @@
 				<ng-template let-department pTemplate="listItem">
 					<div class="col-12">
 						<div class="flex flex-column md:flex-row align-items-center p-3 w-full">
-							<img [src]="'assets/demo/images/product/' + department.image" [alt]="department.name" class="my-4 md:my-0 w-9 md:w-10rem shadow-2 mr-5"/>
+							<img src="../../../assets/demo/images/product/course.jpg" [alt]="department.name" class="my-4 md:my-0 w-9 md:w-10rem shadow-2 mr-5"/>
 							<div class="flex-1 flex flex-column align-items-center text-center md:text-left">
 								<div class="font-bold text-2xl">{{department.name}}</div>
 								<div class="mb-2">{{department.subtitle}}</div>
@@ -28,8 +28,8 @@
 								</div>
 							</div>
 							<div class="flex flex-row md:flex-column justify-content-between w-full md:w-auto align-items-center md:align-items-end mt-5 md:mt-0">
-								<span class="text-2xl font-semibold mb-2 align-self-center md:align-self-end">${{department.name}}</span>
-								<p-button icon="pi pi-shopping-cart" label="Open"  styleClass="mb-2 p-button-sm"></p-button>
+								<span class="text-1xl font-semibold mb-2 align-self-center md:align-self-end">{{department.subtitle}}</span>
+								<p-button icon="pi pi-info-circle" label="Open"  styleClass="mb-2 p-button-sm"></p-button>
 								
 							</div>
 						</div>
@@ -47,14 +47,14 @@
 								
 							</div>
 							<div class="flex flex-column align-items-center text-center mb-3">
-								<img [src]="'assets/demo/images/product/' + department.logo" [alt]="department.name" class="w-9 shadow-2 my-3 mx-0"/>
+								<img  src="../../../assets/demo/images/product/course.jpg" [alt]="department.name" class="w-9 shadow-2 my-3 mx-0"/>
 								<div class="text-2xl font-bold">{{department.name}}</div>
 								<div class="mb-3">{{department.subtitle}}</div>
 								
 							</div>
 							<div class="flex align-items-center justify-content-between">
 								
-								<p-button icon="pi pi-shopping-cart" ></p-button>
+								<p-button icon="pi pi-info-circle" [routerLink]="'view-course'"></p-button>
 							</div>
 						</div>
 					</div>

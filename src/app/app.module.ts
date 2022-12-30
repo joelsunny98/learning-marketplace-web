@@ -26,6 +26,7 @@ import { ViewDepartmentComponent } from './features/view-department/view-departm
 import { ViewCoursesComponent } from './features/view-courses/view-courses.component';
 import { NavbarComponent } from './features/navbar/navbar.component';
 import { AuthGuard } from './shared/services/auth.guard';
+import { ApplyCourseComponent } from './features/apply-course/apply-course.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { AuthGuard } from './shared/services/auth.guard';
     CreateCourseComponent,
     ViewDepartmentComponent,
     ViewCoursesComponent,
-    NavbarComponent
+    NavbarComponent,
+    ApplyCourseComponent
   ],
   imports: [
     BrowserModule,

@@ -33,25 +33,15 @@ export class NavbarComponent {
       this.items = [
         { label : 'Register', icon :'pi pi-fw pi-user-plus', routerLink : 'register'},
         { label : 'Login', routerLink : 'login'},
-        
       ]
-    }
-    
-
-    
+    } 
   }
 
   Logout() {
-    
-    // this.data.refreshToken = "dfdfdf";
-    
     this.data.refreshToken = localStorage.getItem('refreshToken') as string;
+    this.authService.logout(this.data).subscribe();
     localStorage.clear();
     
-
-    
-    
-    // this.authService.logout(this.data).subscribe();
   }
 
 }

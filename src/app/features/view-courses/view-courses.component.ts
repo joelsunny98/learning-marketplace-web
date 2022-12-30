@@ -37,5 +37,9 @@ export class ViewCoursesComponent {
     this.primengConfig.ripple = true;
   }
 
+  openCourse(id : string) {
+    
+  }
+
   
 }

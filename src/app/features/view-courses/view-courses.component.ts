@@ -15,7 +15,7 @@ export class ViewCoursesComponent {
 
   search! : FormGroup;
 
-  items! : MenuItem[];
+  
   
 
   constructor(private courseService : CourseService, private primengConfig : PrimeNGConfig, private fb : FormBuilder) { }
@@ -37,15 +37,10 @@ export class ViewCoursesComponent {
 
     this.primengConfig.ripple = true;
 
-    this.items = [
-      {label: 'Update', icon: 'pi pi-refresh', command: () => {
-        // Update function goes here
-    }},
-    {label: 'Delete', icon: 'pi pi-times', command: () => {
-        // Delete Function goes here
-    }},
-    
-    ];
+  }
+
+  deleteCourse(id : string) {
+    this.courseService.deleteCourse(id).subscribe();
   }
 
   openCourse(id : string) {

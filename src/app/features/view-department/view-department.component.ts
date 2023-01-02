@@ -15,7 +15,6 @@ export class ViewDepartmentComponent {
 
   search! : FormGroup;
 
-  items! : MenuItem[];
 
   constructor(private departmentService : DepartmentService, private primengConfig : PrimeNGConfig, private fb : FormBuilder) { }
 
@@ -34,16 +33,14 @@ export class ViewDepartmentComponent {
       });
     })
     
+    
+
     this.primengConfig.ripple = true;
 
-    this.items = [
-      {label: 'Update', icon: 'pi pi-refresh', command: () => {
-        // Update function goes here
-    }},
-    {label: 'Delete', icon: 'pi pi-times', command: () => {
-        // Delete Function goes here
-    }},
     
-    ];
+  }
+
+  deleteDepartment(id : string) {
+    this.departmentService.deleteDepartment(id).subscribe();
   }
 }

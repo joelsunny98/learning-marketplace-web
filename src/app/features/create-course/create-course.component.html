@@ -1,6 +1,6 @@
 <form [formGroup]="createCourseForm">
 
-    <br><br>
+    <!-- <br><br>
     <span class="p-float-label">
         <input id="float-input-title" type="text" formControlName="title" pInputText> 
         <label for="float-input">Title</label>
@@ -83,7 +83,78 @@
     <br><br>
     <div>
         <button (click)="createCourse()">Create</button>
+    </div> -->
+
+    <div class="col-12 md:col-12">
+		<div class="card p-fluid">
+			<h5>Create Department</h5>
+			<div class="field">
+				<label htmlFor="title">Title</label>
+				<input pInputText id="title" type="text" formControlName="title" />
+			</div>
+			<div class="field">
+                <label htmlFor="reference">Reference</label>
+				<input pInputText id="reference" type="text" formControlName="reference"/>
+			</div>
+            <div class="field">
+                <label htmlFor="subtitle">Subtitle</label>
+                <input pInputText id="subtitle" type="text" formControlName="subtitle"/>
+            </div>
+            <div class="field">
+				<label htmlFor="overview">Overview</label>
+				<input pInputText id="overview" type="text" formControlName="overview"/>
+			</div>
+            <div class="field">
+				<label htmlFor="type">Type</label>
+				<input pInputText id="type" type="text" formControlName="type"/>
+			</div>
+            <div class="field">
+				<label htmlFor="coursePrice">Course Price</label>
+				<input pInputText id="coursePrice" type="text" formControlName="coursePrice"/>
+			</div>
+            <div class="field">
+				<label htmlFor="category">Category</label>
+				<input pInputText id="category" type="text" formControlName="category"/>
+			</div>
+            <div class="field">
+				<label htmlFor="credits">Credits</label>
+				<input pInputText id="credits" type="text" formControlName="credits"/>
+			</div>
+            <div class="field">
+				<label htmlFor="level">Level</label>
+				<input pInputText id="level" type="text" formControlName="level"/>
+			</div>
+            <div class="field">
+				<label htmlFor="deliveryMethod">Delivery Method</label>
+				<input pInputText id="deliveryMethod" type="text" formControlName="deliveryMethod"/>
+			</div>
+            <div class="field">
+				<label htmlFor="status">Status</label>
+				<input pInputText id="Status" type="text" formControlName="status"/>
+			</div>
+            <div class="field">
+				<label htmlFor="publishStatus">Publish Status</label>
+				<input pInputText id="publishStatus" type="text" formControlName="publishStatus"/>
+			</div>
+            <div class="field">
+				<label htmlFor="publishAt">Publish Date</label>
+				<input pInputText id="publishAt" type="text" formControlName="publishAt"/>
+			</div>
+            <div class="field">
+				<label htmlFor="unpublishAt">Unpublish Date</label>
+				<input pInputText id="unpublishAt" type="text" formControlName="unpublishAt"/>
+			</div>
+            <div class="field">
+				<label htmlFor="department">Department</label>
+				<input pInputText id="department" type="text" formControlName="department"/>
+			</div>
+            <div class="field">
+				<label htmlFor="trainer">Trainer</label>
+				<input pInputText id="trainer" type="text" formControlName="trainer"/>
+			</div>
+            <br>
+            <button pButton pRipple label="Create" class="w-full p-3 text-xl" (click)="createCourse()"></button>
+            <!-- <button pButton pRipple label="Create" class="w-full p-3 text-xl" (click)="createCourse()" ></button>xxxxx  -->
+		</div>
     </div>
-
-
 </form>

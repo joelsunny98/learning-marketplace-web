@@ -40,8 +40,11 @@ export class NavbarComponent {
   Logout() {
     this.data.refreshToken = localStorage.getItem('refreshToken') as string;
     this.authService.logout(this.data).subscribe();
-    localStorage.clear();
-    
+    localStorage.clear(); 
+  }
+
+  isLoggedIn() {
+    return this.authService.isLoggedIn();
   }
 
 }

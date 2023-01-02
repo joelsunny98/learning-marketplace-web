@@ -22,11 +22,8 @@ export class NavbarComponent {
 
     if(this.authService.isLoggedIn()){
       this.items = [
-        { label : 'View Courses', routerLink : 'view-course' },
-        { label : 'View Departments', routerLink : 'view-department'},
-        { label : 'Create Course' , routerLink: 'create-course'},
-        { label : 'Create Department', routerLink : 'create-department' }
-  
+        { label : 'Courses', routerLink : 'view-course' },
+        { label : 'Departments', routerLink : 'view-department'}
       ]
     }
     else {

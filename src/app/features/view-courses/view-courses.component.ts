@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PrimeNGConfig } from 'primeng/api';
+import { MenuItem, PrimeNGConfig } from 'primeng/api';
 import { Course } from 'src/app/shared/models/course';
 import { CourseService } from 'src/app/shared/services/course.service';
 import { DataView } from 'primeng/dataview';
@@ -15,6 +15,7 @@ export class ViewCoursesComponent {
 
   search! : FormGroup;
 
+  items! : MenuItem[];
   
 
   constructor(private courseService : CourseService, private primengConfig : PrimeNGConfig, private fb : FormBuilder) { }
@@ -35,10 +36,20 @@ export class ViewCoursesComponent {
     });
 
     this.primengConfig.ripple = true;
+
+    this.items = [
+      {label: 'Update', icon: 'pi pi-refresh', command: () => {
+        // Update function goes here
+    }},
+    {label: 'Delete', icon: 'pi pi-times', command: () => {
+        // Delete Function goes here
+    }},
+    
+    ];
   }
 
   openCourse(id : string) {
-    
+
   }
 
   

@@ -13,6 +13,7 @@ import { DialogModule } from 'primeng/dialog';
 import { RippleModule } from 'primeng/ripple';
 import { MenubarModule } from 'primeng/menubar';
 import { PasswordModule } from 'primeng/password';
+import { SplitButtonModule } from 'primeng/splitbutton';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -55,7 +56,8 @@ import { ApplyCourseComponent } from './features/apply-course/apply-course.compo
     DialogModule,
     RippleModule,
     MenubarModule,
-    PasswordModule
+    PasswordModule,
+    SplitButtonModule
     
   ],
   providers: [{

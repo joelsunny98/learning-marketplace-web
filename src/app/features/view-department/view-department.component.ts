@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { PrimeNGConfig } from 'primeng/api';
+import { MenuItem, PrimeNGConfig } from 'primeng/api';
 import { Department } from 'src/app/shared/models/department';
 import { DepartmentService } from 'src/app/shared/services/department.service';
 
@@ -14,6 +14,8 @@ export class ViewDepartmentComponent {
   departments! : Department[];
 
   search! : FormGroup;
+
+  items! : MenuItem[];
 
   constructor(private departmentService : DepartmentService, private primengConfig : PrimeNGConfig, private fb : FormBuilder) { }
 
@@ -33,5 +35,15 @@ export class ViewDepartmentComponent {
     })
     
     this.primengConfig.ripple = true;
+
+    this.items = [
+      {label: 'Update', icon: 'pi pi-refresh', command: () => {
+        // Update function goes here
+    }},
+    {label: 'Delete', icon: 'pi pi-times', command: () => {
+        // Delete Function goes here
+    }},
+    
+    ];
   }
 }

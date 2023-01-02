@@ -31,8 +31,8 @@ export class NavbarComponent {
     }
     else {
       this.items = [
-        { label : 'Register', icon :'pi pi-fw pi-user-plus', routerLink : 'register'},
-        { label : 'Login', routerLink : 'login'},
+        // { label : 'Register', icon :'pi pi-fw pi-user-plus', routerLink : 'register'},
+        // { label : 'Login', routerLink : 'login'},
       ]
     } 
   }

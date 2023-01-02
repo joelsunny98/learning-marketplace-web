@@ -10,6 +10,7 @@
                             <i class="pi pi-search"></i>
                             <input type="search" pInputText placeholder="Search by Name" formControlName="name">
                         </span>	
+						<p-button icon="pi pi-plus" label="Create" styleClass="mb-2 p-button-sm" routerLink="/create-department"></p-button>
 						<p-dataViewLayoutOptions></p-dataViewLayoutOptions>
 					</form>
 				</ng-template>
@@ -30,6 +31,7 @@
 							<div class="flex flex-row md:flex-column justify-content-between w-full md:w-auto align-items-center md:align-items-end mt-5 md:mt-0">
 								<span class="text-1xl font-semibold mb-2 align-self-center md:align-self-end">{{department.subtitle}}</span>
 								<p-button icon="pi pi-info-circle" label="Open"  styleClass="mb-2 p-button-sm"></p-button>
+								<p-splitButton label="Action" icon="pi pi-plus" [model]="items"></p-splitButton>
 								
 							</div>
 						</div>

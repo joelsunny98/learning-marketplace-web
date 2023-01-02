@@ -18,7 +18,7 @@
 				<ng-template let-course pTemplate="listItem">
 					<div class="col-12">
 						<div class="flex flex-column md:flex-row align-items-center p-3 w-full">
-							<img src="../../../assets/demo/images/product/course.jpg" [alt]="course.reference" class="my-4 md:my-0 w-9 md:w-10rem shadow-2 mr-5"/>
+							<img [src]="'../../../assets/demo/images/courses/' + course.teaserImage" [alt]="course.reference" class="my-4 md:my-0 w-9 md:w-10rem shadow-2 mr-5"/>
 							<div class="flex-1 flex flex-column align-items-center text-center md:text-left">
 								<div class="font-bold text-2xl">{{course.title}}</div>
 								<div class="mb-2">{{course.subtitle}}</div>
@@ -51,7 +51,7 @@
 								<span [class]="'product-badge status-' + course.deliveryMethod.toLowerCase()">{{course.deliveryMethod}}</span>
 							</div>
 							<div class="flex flex-column align-items-center text-center mb-3">
-								<img src="../../../assets/demo/images/product/course.jpg" [alt]="course.reference" class="w-9 shadow-2 my-3 mx-0"/>
+								<img [src]="'../../../assets/demo/images/courses/' + course.teaserImage" [alt]="course.reference" class="w-9 shadow-2 my-3 mx-0"/>
 								<div class="text-2xl font-bold">{{course.title}}</div>
 								<div class="mb-3">{{course.subtitle}}</div>
 							</div>

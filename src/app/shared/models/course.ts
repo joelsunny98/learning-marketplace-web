@@ -2,6 +2,7 @@ export interface Course {
     id? : string;
     title? : string;
     reference? : string;
+    teaserImage? : string;
     subtitle? : string;
     overview? : string;
     type? : string;

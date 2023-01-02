@@ -59,7 +59,7 @@
 								<span class="text-2xl font-semibold">${{course.coursePrice}}</span>
 								<div class="">
 									<!-- <p-splitButton label="Action" icon="pi pi-plus" [model]="items" styleClass="p-button-success mb-2"></p-splitButton> -->
-									<p-button routerLink="/apply-course" icon="pi pi-pencil" styleClass="p-button-success mb-2"></p-button> &nbsp;&nbsp;    
+									<p-button [routerLink]="[course.id, 'edit']" icon="pi pi-pencil" styleClass="p-button-success mb-2"></p-button> &nbsp;&nbsp;    
 									<p-button  (onClick)="deleteCourse(course.id)" icon="pi pi-trash" styleClass="p-button-danger mb-2"></p-button>
 								</div>
 								

@@ -14,6 +14,7 @@ const routes: Routes = [
   { path : 'login', component: LoginComponent},
   { path : 'register', component : RegisterComponent },
   { path : 'create-course', component: CreateCourseComponent, canActivate : [AuthGuard] },
+  { path : 'course/:id/edit', component: CreateCourseComponent, canActivate : [AuthGuard] },
   { path : 'create-department', component : CreateDepartmentComponent, canActivate : [AuthGuard] },
   { path : 'department', component : ViewDepartmentComponent, canActivate : [AuthGuard] },
   { path : 'course', component : ViewCoursesComponent, canActivate : [AuthGuard] },

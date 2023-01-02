@@ -14,6 +14,7 @@ import { RippleModule } from 'primeng/ripple';
 import { MenubarModule } from 'primeng/menubar';
 import { PasswordModule } from 'primeng/password';
 import { SplitButtonModule } from 'primeng/splitbutton';
+import { CalendarModule } from "primeng/calendar";
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -57,7 +58,8 @@ import { ApplyCourseComponent } from './features/apply-course/apply-course.compo
     RippleModule,
     MenubarModule,
     PasswordModule,
-    SplitButtonModule
+    SplitButtonModule,
+    CalendarModule
     
   ],
   providers: [{

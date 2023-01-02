@@ -87,7 +87,7 @@
 
     <div class="col-12 md:col-12">
 		<div class="card p-fluid">
-			<h5>Create Department</h5>
+			<h5>Create Course</h5>
 			<div class="field">
 				<label htmlFor="title">Title</label>
 				<input pInputText id="title" type="text" formControlName="title" />
@@ -138,22 +138,24 @@
 			</div>
             <div class="field">
 				<label htmlFor="publishAt">Publish Date</label>
-				<input pInputText id="publishAt" type="text" formControlName="publishAt"/>
+                <p-calendar [showIcon]="true" inputId="icon" formControlName="publishAt"></p-calendar>
+				<!-- <input pInputText id="publishAt" type="text"  formControlName="publishAt"/> -->
 			</div>
             <div class="field">
 				<label htmlFor="unpublishAt">Unpublish Date</label>
-				<input pInputText id="unpublishAt" type="text" formControlName="unpublishAt"/>
+                <p-calendar [showIcon]="true" inputId="icon" formControlName="unpublishAt"></p-calendar>
+				<!-- <input pInputText id="unpublishAt" type="text" formControlName="unpublishAt"/> -->
 			</div>
             <div class="field">
 				<label htmlFor="department">Department</label>
-				<input pInputText id="department" type="text" formControlName="department"/>
+				<input pInputText id="department" type="text" formControlName="departmentId"/>
 			</div>
             <div class="field">
 				<label htmlFor="trainer">Trainer</label>
-				<input pInputText id="trainer" type="text" formControlName="trainer"/>
+				<input pInputText id="trainer" type="text" formControlName="trainerId"/>
 			</div>
             <br>
-            <button pButton pRipple label="Create" class="w-full p-3 text-xl" (click)="createCourse()"></button>
+            <button pButton pRipple label="Create" class="w-full p-3 text-xl" (click)="saveCourse()"></button>
             <!-- <button pButton pRipple label="Create" class="w-full p-3 text-xl" (click)="createCourse()" ></button>xxxxx  -->
 		</div>
     </div>

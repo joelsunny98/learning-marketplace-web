@@ -21,9 +21,7 @@ export class ViewCoursesComponent {
   constructor(private courseService : CourseService, private primengConfig : PrimeNGConfig, private fb : FormBuilder) { }
 
   ngOnInit() {
-    this.courseService.getCourseList().subscribe(data => {
-      this.courses = data;
-    });
+    this.getCourses();
     
     this.search = this.fb.group({
       name : new FormControl('')
@@ -39,8 +37,14 @@ export class ViewCoursesComponent {
 
   }
 
+  getCourses() {
+    this.courseService.getCourseList().subscribe(data => {
+      this.courses = data;
+    });
+  }
+
   deleteCourse(id : string) {
-    this.courseService.deleteCourse(id).subscribe();
+    this.courseService.deleteCourse(id).subscribe(data => {this.getCourses()});
   }
 
   openCourse(id : string) {

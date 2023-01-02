@@ -1,4 +1,5 @@
 export interface Course {
+    id? : string;
     title? : string;
     reference? : string;
     subtitle? : string;
@@ -11,8 +12,8 @@ export interface Course {
     deliveryMethod? : string;
     status? : string;
     publishStatus? : string;
-    publishAt? : string;
-    unpublishAt? : string;
+    publishAt : Date;
+    unpublishAt : Date;
     departmentId? : string;
     trainerId? : string;  
 }

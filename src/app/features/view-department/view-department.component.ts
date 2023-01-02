@@ -19,9 +19,7 @@ export class ViewDepartmentComponent {
   constructor(private departmentService : DepartmentService, private primengConfig : PrimeNGConfig, private fb : FormBuilder) { }
 
   ngOnInit() {
-    this.departmentService.getDepartmentList().subscribe(data => {
-      this.departments = data;
-    });
+    this.getDepartments();
 
     this.search = this.fb.group({
       name : new FormControl('')
@@ -40,7 +38,13 @@ export class ViewDepartmentComponent {
     
   }
 
+  getDepartments() {
+    this.departmentService.getDepartmentList().subscribe(data => {
+      this.departments = data;
+    });
+  }
+
   deleteDepartment(id : string) {
-    this.departmentService.deleteDepartment(id).subscribe();
+    this.departmentService.deleteDepartment(id).subscribe(data => {this.getDepartments()});
   }
 }

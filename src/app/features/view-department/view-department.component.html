@@ -10,9 +10,11 @@
                             <i class="pi pi-search"></i>
                             <input type="search" pInputText placeholder="Search by Name" formControlName="name">
                         </span>	
-						<p-button icon="pi pi-plus" label="Create" styleClass="mb-2 p-button-sm" routerLink="/create-department"></p-button>
+						
 						<p-dataViewLayoutOptions></p-dataViewLayoutOptions>
 					</form>
+					<br>
+					<p-button icon="pi pi-plus" label="Create"  routerLink="/create-department"></p-button>
 				</ng-template>
 
 				<ng-template let-department pTemplate="listItem">
@@ -56,10 +58,11 @@
 								
 							</div>
 							<div class="flex align-items-center justify-content-between">
+								<p-button icon="pi pi-info-circle" routerLink="/view-course"></p-button>
 								<div class="">
 									<p-button routerLink="/apply-course" icon="pi pi-pencil" styleClass="p-button-success mb-2"></p-button>     
 									<p-button routerLink="/apply-course" (onClick)="deleteDepartment(department.id)" icon="pi pi-trash" styleClass="p-button-danger mb-2"></p-button>
-									<p-button icon="pi pi-info-circle" routerLink="/view-course"></p-button>
+									
 								</div>
 							</div>
 						</div>

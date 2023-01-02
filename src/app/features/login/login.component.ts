@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.loginForm.value).subscribe((token : Token) => {
       localStorage.setItem('authToken', token.accessToken);
       localStorage.setItem('refreshToken', token.refreshToken);
-      this.router.navigate(['/view-department']);
+      this.router.navigate(['/department']);
     }
     )
     // this.router.navigate(['/view-department']);
@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
     this.loginForm.valueChanges.subscribe(console.log)
 
     if(this.authService.isLoggedIn()){
-      this.router.navigate(['/view-department']);
+      this.router.navigate(['/department']);
     }
   }
 

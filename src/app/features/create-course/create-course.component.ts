@@ -68,12 +68,15 @@ export class CreateCourseComponent {
 
   saveCourse() {
     if (this.courseId) {
-      this.courseService.updateCourse(this.createCourseForm.value, this.courseId).subscribe();
-      this.showMessage();
+      this.courseService.updateCourse(this.createCourseForm.value, this.courseId).subscribe(data => {
+        this.showMessage();
+      });
+      
     }
     else {
-      this.courseService.createCourse(this.createCourseForm.value).subscribe();
-      this.showMessage();
+      this.courseService.createCourse(this.createCourseForm.value).subscribe(data => {
+        this.showMessage();
+      });
     }
   }
 
@@ -87,7 +90,6 @@ export class CreateCourseComponent {
 
   showMessage() {
     if(this.courseId){
-      
       this.messageService.add({
         severity: "success",
         summary: "Updated",
@@ -95,7 +97,6 @@ export class CreateCourseComponent {
       });
     }
     else {
-      
       this.messageService.add({
         severity: "success",
         summary: "Saved",

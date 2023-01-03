@@ -1,34 +1,37 @@
 <p-toast></p-toast>
 <form [formGroup]="createDepartmentForm" >
-    <div class="col-12 md:col-12">
-		<div class="card p-fluid">
-			<h5>Create Department</h5>
-			<div class="field">
+	<div class="card p-fluid">
+		<div class="p-formgrid grid">
+			<div class="field col">
 				<label htmlFor="name">Name</label>
 				<input pInputText id="name" type="text" formControlName="name" />
 			</div>
-			<div class="field">
+			<div class="field col">
 				<label htmlFor="subtitle">Subtitle</label>
 				<input pInputText id="subtitle" type="text" formControlName="subtitle"/>
 			</div>
-			<div class="field">
+		</div>
+		<div class="p-formgrid grid">
+			<div class="field col">
 				<label htmlFor="summary">Summary</label>
 				<input pInputText id="summary" type="text" formControlName="summary"/>
 			</div>
-            <div class="field">
+			<div class="field col">
 				<label htmlFor="logo">Logo</label>
 				<input pInputText id="logo" type="text" formControlName="logo"/>
 			</div>
-            <div class="field">
+		</div>
+		<div class="p-formgrid grid">
+			<div class="field col">
 				<label htmlFor="BackGroundImage">Background Image</label>
 				<input pInputText id="backgroundImage" type="text" formControlName="backgroundImage"/>
 			</div>
-            <div class="field">
+			<div class="field col">
 				<label htmlFor="locationId">Location Id</label>
 				<input pInputText id="locationId" type="text" formControlName="locationId" [defaultValue]="'placeholder'"/>
 			</div>
-            <br>
-            <button pButton pRipple label="Save" class="w-full p-3 text-xl" (click)="saveDepartment()" ></button>
 		</div>
-    </div>
+		<br>
+		<button pButton pRipple label="Save" class="w-full p-3 text-xl" (click)="saveDepartment()" ></button>
+	</div>
 </form>

@@ -17,6 +17,8 @@ export class ViewDepartmentComponent {
 
   msgs: Message[] = [];
 
+  display : boolean = false;
+
   constructor(private departmentService : DepartmentService, 
               private primengConfig : PrimeNGConfig, 
               private fb : FormBuilder,
@@ -65,5 +67,9 @@ export class ViewDepartmentComponent {
         this.msgs = [{severity:'info', summary:'Rejected', detail:'You have rejected'}];
       }
     })
+  }
+
+  showDisplay() {
+    this.display = true;
   }
 }

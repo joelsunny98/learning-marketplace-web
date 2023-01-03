@@ -15,7 +15,10 @@
 						<p-dataViewLayoutOptions></p-dataViewLayoutOptions>
 					</form>
 					<br>
-					<p-button icon="pi pi-plus" label="Create"  routerLink="/create-department"></p-button>
+					<p-button type="button" (click)="showDisplay()" icon="pi pi-plus" label="Create"></p-button>
+					<!-- <p-button icon="pi pi-plus" label="Create"  routerLink="/create-department"></p-button> -->
+				
+						
 				</ng-template>
 
 				<ng-template let-department pTemplate="listItem">
@@ -47,19 +50,18 @@
 						<div class="card m-3 border-1 surface-border">
 							<div class="flex flex-wrap gap-2 align-items-center justify-content-between mb-2">
 								<div class="flex align-items-center">
-									<i class="pi pi-tag mr-2"></i>
 									<span class="font-semibold">{{department.category}}</span>
 								</div>
 								
 							</div>
 							<div class="flex flex-column align-items-center text-center mb-3">
-								<img  [src]="'../../../assets/demo/images/departments/' + department.logo" [alt]="department.name" class="w-9 shadow-2 my-3 mx-0"/>
+								<img  [src]="'assets/demo/images/departments/' + department.logo" [alt]="department.name" class="w-9 shadow-2 my-3 mx-0"/>
 								<div class="text-2xl font-bold">{{department.name}}</div>
 								<div class="mb-3">{{department.subtitle}}</div>
 								
 							</div>
 							<div class="flex align-items-center justify-content-between">
-								<p-button icon="pi pi-info-circle" routerLink="/view-course"></p-button>
+								<p-button icon="pi pi-info-circle" routerLink="/course"></p-button>
 								<div class="">
 									<p-button [routerLink]="[department.id, 'edit']" icon="pi pi-pencil" styleClass="p-button-success mb-2"></p-button> &nbsp;&nbsp;    
 									<p-button  (onClick)="confirmDelete(department.id)" icon="pi pi-trash" styleClass="p-button-danger mb-2"></p-button>
@@ -75,3 +77,7 @@
 
 	
 </div>
+
+<p-dialog header="Create Department" [(visible)]="display" [style]="{width: '50vw'}">
+	<app-create-department></app-create-department>
+</p-dialog>

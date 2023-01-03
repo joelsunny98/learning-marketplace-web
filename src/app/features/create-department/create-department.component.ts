@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { Department } from 'src/app/shared/models/department';
 import { DepartmentService } from 'src/app/shared/services/department.service';
 
@@ -11,18 +12,21 @@ import { DepartmentService } from 'src/app/shared/services/department.service';
 export class CreateDepartmentComponent {
 
   createDepartmentForm! : FormGroup;
+  departmentId! : string | null;
 
 
-  constructor(private departmentService : DepartmentService, private fb : FormBuilder) {}
+  constructor(private departmentService : DepartmentService, private fb : FormBuilder, private route: ActivatedRoute) {}
 
-  createDepartment(){
-    
-    console.log(this.createDepartmentForm.value);
-
-    this.departmentService.createDepartment(this.createDepartmentForm.value).subscribe();
-  }
 
   ngOnInit() : void {
+    this.buildDepartmentForm();
+    this.departmentId = this.route.snapshot.paramMap.get('id');
+    if (this.departmentId) {
+      this.getDepartmentDetail(this.departmentId);
+    }
+  }
+
+  buildDepartmentForm() {
     this.createDepartmentForm = this.fb.group({
       name : new FormControl(''),
       subtitle : new FormControl(''),
@@ -30,6 +34,21 @@ export class CreateDepartmentComponent {
       logo : new FormControl(''),
       backgroundImage : new FormControl(''),
       locationId : new FormControl('')
+    })
+  }
+
+  saveDepartment() {
+    if(this.departmentId) {
+      this.departmentService.updateDepartment(this.createDepartmentForm.value, this.departmentId).subscribe();
+    }
+    else {
+      this.departmentService.createDepartment(this.createDepartmentForm.value).subscribe();
+    }
+  }
+
+  getDepartmentDetail(departmentId :  string) {
+    this.departmentService.getDepartment(departmentId).subscribe(dept => {
+      this.createDepartmentForm.patchValue(dept);
     })
   }
 

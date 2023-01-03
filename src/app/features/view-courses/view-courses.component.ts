@@ -40,7 +40,6 @@ export class ViewCoursesComponent {
   getCourses() {
     this.courseService.getCourseList().subscribe(data => {
       this.courses = data;
-      console.log(this.courses[4].teaserImage)
     });
   }
 

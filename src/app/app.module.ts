@@ -15,6 +15,10 @@ import { MenubarModule } from 'primeng/menubar';
 import { PasswordModule } from 'primeng/password';
 import { SplitButtonModule } from 'primeng/splitbutton';
 import { CalendarModule } from "primeng/calendar";
+import { MessagesModule } from 'primeng/messages';
+import { MessageModule } from 'primeng/message';
+import { ConfirmationService, MessageService } from "primeng/api";
+import {ToastModule} from 'primeng/toast';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -59,7 +63,10 @@ import { ApplyCourseComponent } from './features/apply-course/apply-course.compo
     MenubarModule,
     PasswordModule,
     SplitButtonModule,
-    CalendarModule
+    CalendarModule,
+    MessagesModule,
+    MessageModule,
+    ToastModule
     
   ],
   providers: [{
@@ -67,7 +74,10 @@ import { ApplyCourseComponent } from './features/apply-course/apply-course.compo
     useClass : AuthInterceptor,
     multi : true
   }, 
-  AuthGuard],
+  AuthGuard,
+  ConfirmationService,
+  MessageService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

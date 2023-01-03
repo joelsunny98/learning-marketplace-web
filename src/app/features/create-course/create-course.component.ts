@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Message, MessageService } from 'primeng/api';
 import { Course } from 'src/app/shared/models/course';
 import { CourseService } from 'src/app/shared/services/course.service';
 
@@ -12,8 +13,13 @@ import { CourseService } from 'src/app/shared/services/course.service';
 export class CreateCourseComponent {
   createCourseForm!: FormGroup;
   courseId!: string | null;
+  message!: Message[];
 
-  constructor(private courseService: CourseService, private fb: FormBuilder, private route: ActivatedRoute) { }
+  constructor(private courseService: CourseService, 
+              private fb: FormBuilder, 
+              private route: ActivatedRoute, 
+              private messageService: MessageService,
+              private readonly router: Router ) { }
 
   ngOnInit(): void {
     this.buildCourseForm();
@@ -47,9 +53,11 @@ export class CreateCourseComponent {
   saveCourse() {
     if (this.courseId) {
       this.courseService.updateCourse(this.createCourseForm.value, this.courseId).subscribe();
+      this.showMessage();
     }
     else {
       this.courseService.createCourse(this.createCourseForm.value).subscribe();
+      this.showMessage();
     }
   }
 
@@ -60,5 +68,29 @@ export class CreateCourseComponent {
       this.createCourseForm.get('unpublishAt')?.patchValue(new Date(course.unpublishAt))
     })
   }
+
+  showMessage() {
+    if(this.courseId){
+      // this.message.push({severity:'success', summary:'Saved', detail:'Created course successfully'});
+      this.messageService.add({
+        severity: "success",
+        summary: "Updated",
+        detail: "Updated course successfully"
+      });
+    }
+    else {
+      // this.message.push({severity:'success', summary:'Updated', detail:'Updated course successfully'});
+      this.messageService.add({
+        severity: "success",
+        summary: "Saved",
+        detail: "Created course successfully"
+      });
+    }
+    setTimeout(() => {
+      this.router.navigate(['/course']);
+    }, 1200);
+    
+  }
+
 
 }

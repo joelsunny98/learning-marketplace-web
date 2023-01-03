@@ -20,7 +20,7 @@
 				<ng-template let-department pTemplate="listItem">
 					<div class="col-12">
 						<div class="flex flex-column md:flex-row align-items-center p-3 w-full">
-							<img src="../../../assets/demo/images/product/course.jpg" [alt]="department.name" class="my-4 md:my-0 w-9 md:w-10rem shadow-2 mr-5"/>
+							<img [src]="'../../../assets/demo/images/departments/' + department.logo" [alt]="department.name" class="my-4 md:my-0 w-9 md:w-10rem shadow-2 mr-5"/>
 							<div class="flex-1 flex flex-column align-items-center text-center md:text-left">
 								<div class="font-bold text-2xl">{{department.name}}</div>
 								<div class="mb-2">{{department.subtitle}}</div>
@@ -52,7 +52,7 @@
 								
 							</div>
 							<div class="flex flex-column align-items-center text-center mb-3">
-								<img  src="../../../assets/demo/images/product/course.jpg" [alt]="department.name" class="w-9 shadow-2 my-3 mx-0"/>
+								<img  [src]="'../../../assets/demo/images/departments/' + department.logo" [alt]="department.name" class="w-9 shadow-2 my-3 mx-0"/>
 								<div class="text-2xl font-bold">{{department.name}}</div>
 								<div class="mb-3">{{department.subtitle}}</div>
 								

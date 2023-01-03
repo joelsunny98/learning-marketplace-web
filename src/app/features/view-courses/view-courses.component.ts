@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MenuItem, PrimeNGConfig } from 'primeng/api';
+import { ConfirmationService, MenuItem, Message, PrimeNGConfig } from 'primeng/api';
 import { Course } from 'src/app/shared/models/course';
 import { CourseService } from 'src/app/shared/services/course.service';
 import { DataView } from 'primeng/dataview';
@@ -15,10 +15,13 @@ export class ViewCoursesComponent {
 
   search! : FormGroup;
 
-  
+  msgs: Message[] = [];
   
 
-  constructor(private courseService : CourseService, private primengConfig : PrimeNGConfig, private fb : FormBuilder) { }
+  constructor(private courseService : CourseService, 
+              private primengConfig : PrimeNGConfig, 
+              private fb : FormBuilder,
+              private confirmationService: ConfirmationService ) { }
 
   ngOnInit() {
     this.getCourses();
@@ -47,8 +50,19 @@ export class ViewCoursesComponent {
     this.courseService.deleteCourse(id).subscribe(data => {this.getCourses()});
   }
 
-  openCourse(id : string) {
-
+  confirmDelete(id : string) {
+    this.confirmationService.confirm({
+      message: 'Are you sure that you want to proceed?',
+      header: 'Confirmation',
+      icon: 'pi pi-exclamation-triangle',
+      accept : () => {
+        this.deleteCourse(id);
+        this.msgs = [{severity:'info', summary:'Confirmed', detail:'You have accepted'}];
+      },
+      reject: () => {
+        this.msgs = [{severity:'info', summary:'Rejected', detail:'You have rejected'}];
+      }
+    })
   }
 
   

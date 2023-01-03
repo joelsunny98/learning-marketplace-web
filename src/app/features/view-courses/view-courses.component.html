@@ -1,3 +1,5 @@
+<p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000"></p-confirmDialog>
+
 <div class="grid">
 	<div class="col-12">
 		<div class="card">
@@ -57,7 +59,7 @@
 								<span class="text-2xl font-semibold">${{course.coursePrice}}</span>
 								<div class="">
 									<p-button [routerLink]="[course.id, 'edit']" icon="pi pi-pencil" styleClass="p-button-success mb-2"></p-button> &nbsp;&nbsp;    
-									<p-button  (onClick)="deleteCourse(course.id)" icon="pi pi-trash" styleClass="p-button-danger mb-2"></p-button>
+									<p-button  (onClick)="confirmDelete(course.id)" icon="pi pi-trash" styleClass="p-button-danger mb-2"></p-button>
 								</div>
 								
 							</div>

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { MenuItem, PrimeNGConfig } from 'primeng/api';
+import { ConfirmationService, MenuItem, Message, PrimeNGConfig } from 'primeng/api';
 import { Department } from 'src/app/shared/models/department';
 import { DepartmentService } from 'src/app/shared/services/department.service';
 
@@ -15,8 +15,12 @@ export class ViewDepartmentComponent {
 
   search! : FormGroup;
 
+  msgs: Message[] = [];
 
-  constructor(private departmentService : DepartmentService, private primengConfig : PrimeNGConfig, private fb : FormBuilder) { }
+  constructor(private departmentService : DepartmentService, 
+              private primengConfig : PrimeNGConfig, 
+              private fb : FormBuilder,
+              private confirmationService: ConfirmationService) { }
 
   ngOnInit() {
     this.getDepartments();
@@ -46,5 +50,20 @@ export class ViewDepartmentComponent {
 
   deleteDepartment(id : string) {
     this.departmentService.deleteDepartment(id).subscribe(data => {this.getDepartments()});
+  }
+
+  confirmDelete(id : string) {
+    this.confirmationService.confirm({
+      message: 'Are you sure that you want to proceed?',
+      header: 'Confirmation',
+      icon: 'pi pi-exclamation-triangle',
+      accept : () => {
+        this.deleteDepartment(id);
+        this.msgs = [{severity:'info', summary:'Confirmed', detail:'You have accepted'}];
+      },
+      reject: () => {
+        this.msgs = [{severity:'info', summary:'Rejected', detail:'You have rejected'}];
+      }
+    })
   }
 }

@@ -19,6 +19,7 @@ import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
 import { ConfirmationService, MessageService } from "primeng/api";
 import {ToastModule} from 'primeng/toast';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -66,7 +67,8 @@ import { ApplyCourseComponent } from './features/apply-course/apply-course.compo
     CalendarModule,
     MessagesModule,
     MessageModule,
-    ToastModule
+    ToastModule,
+    ConfirmDialogModule
     
   ],
   providers: [{

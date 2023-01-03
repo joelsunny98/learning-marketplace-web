@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Course } from '../models/course';
+import { Trainer } from '../models/trainer';
 
 @Injectable({
   providedIn: 'root'
@@ -39,8 +40,8 @@ export class CourseService {
     return this.http.delete<any>(`${environment.apiUrl}/${this.url}/${id}`);
   }
 
-  public getTrainerName() : Observable<string[]> {
-    return this.http.get<string[]>(`${environment.apiUrl}/trainers`)
+  public getTrainerName() : Observable<Trainer[]> {
+    return this.http.get<Trainer[]>(`${environment.apiUrl}/trainers`)
   }
 
 }

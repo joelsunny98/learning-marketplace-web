@@ -62,11 +62,13 @@
 			</div>
             <div class="field">
 				<label htmlFor="department">Department</label>
-				<input pInputText id="department" type="text" formControlName="departmentId"/>
+				<p-dropdown [options]="DepartmentData" optionLabel="name" optionValue="id" formControlName="departmentId" class="w-full md:w-30rem mb-5" ></p-dropdown>
+				<!-- <input pInputText id="department" type="text" formControlName="departmentId"/> -->
 			</div>
             <div class="field">
 				<label htmlFor="trainer">Trainer</label>
-				<input pInputText id="trainer" type="text" formControlName="trainerId"/>
+				<p-dropdown [options]="TrainerData" optionLabel="name" optionValue="id" formControlName="trainerId" class="w-full md:w-30rem mb-5" ></p-dropdown>
+				<!-- <input pInputText id="trainer" type="text" formControlName="trainerId"/> -->
 			</div>
             <br>
             <button pButton pRipple label="Save" class="w-full p-3 text-xl" (click)="saveCourse()"></button>

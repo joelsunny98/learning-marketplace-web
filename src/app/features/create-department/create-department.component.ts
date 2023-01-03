@@ -14,6 +14,11 @@ export class CreateDepartmentComponent {
 
   createDepartmentForm!: FormGroup;
   departmentId!: string | null;
+  data! : Department[];
+
+  departmentDropdownItems = [
+    
+  ]
 
 
 
@@ -30,6 +35,10 @@ export class CreateDepartmentComponent {
     if (this.departmentId) {
       this.getDepartmentDetail(this.departmentId);
     }
+
+    this.departmentService.getDepartmentList().subscribe(dat => {
+      this.data = dat;
+    });
   }
 
   buildDepartmentForm() {
@@ -53,7 +62,6 @@ export class CreateDepartmentComponent {
       this.departmentService.createDepartment(this.createDepartmentForm.value).subscribe(data => {
         this.showMessage();
       });
-      this.showMessage();
     }
   }
 

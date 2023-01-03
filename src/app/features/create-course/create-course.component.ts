@@ -3,7 +3,11 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Message, MessageService } from 'primeng/api';
 import { Course } from 'src/app/shared/models/course';
+import { Department } from 'src/app/shared/models/department';
+import { Trainer } from 'src/app/shared/models/trainer';
+import { User } from 'src/app/shared/models/user';
 import { CourseService } from 'src/app/shared/services/course.service';
+import { DepartmentService } from 'src/app/shared/services/department.service';
 
 @Component({
   selector: 'app-create-course',
@@ -14,8 +18,12 @@ export class CreateCourseComponent {
   createCourseForm!: FormGroup;
   courseId!: string | null;
   message!: Message[];
+  DepartmentData! : Department[];
+  TrainerData! : Trainer[];
+
 
   constructor(private courseService: CourseService, 
+              private departmentService: DepartmentService,
               private fb: FormBuilder, 
               private route: ActivatedRoute, 
               private messageService: MessageService,
@@ -27,6 +35,14 @@ export class CreateCourseComponent {
     if (this.courseId) {
       this.getCourseDetail(this.courseId);
     }
+
+    this.departmentService.getDepartmentList().subscribe(data => {
+      this.DepartmentData = data;
+    });
+
+    this.courseService.getTrainerName().subscribe(data => {
+      this.TrainerData = data;
+    });
   }
 
   buildCourseForm() {
@@ -71,7 +87,7 @@ export class CreateCourseComponent {
 
   showMessage() {
     if(this.courseId){
-      // this.message.push({severity:'success', summary:'Saved', detail:'Created course successfully'});
+      
       this.messageService.add({
         severity: "success",
         summary: "Updated",
@@ -79,7 +95,7 @@ export class CreateCourseComponent {
       });
     }
     else {
-      // this.message.push({severity:'success', summary:'Updated', detail:'Updated course successfully'});
+      
       this.messageService.add({
         severity: "success",
         summary: "Saved",

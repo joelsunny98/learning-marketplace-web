@@ -24,7 +24,7 @@ export class CourseService {
     }
   }
 
-  public getCourse(id : string) : Observable<Course> {
+  public getCourse(id : string | null) : Observable<Course> {
     return this.http.get<Course>(`${environment.apiUrl}/${this.url}/${id}`);
   }
 

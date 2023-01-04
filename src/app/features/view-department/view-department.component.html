@@ -1,9 +1,9 @@
 <p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000"></p-confirmDialog>
-
+<br><br><br>
 <div class="grid">
 	<div class="col-12">
 		<div class="card">
-			<h5>DataView</h5>
+			<h3>Departments</h3>
 			<p-dataView #dv [value]="departments" [paginator]="true" [rows]="9" filterBy="name" layout="grid">
 				<ng-template pTemplate="header">
 					<form [formGroup]="search" class="flex flex-column md:flex-row md:justify-content-between gap-2">
@@ -55,7 +55,7 @@
 								
 							</div>
 							<div class="flex flex-column align-items-center text-center mb-3">
-								<img  [src]="'assets/demo/images/departments/' + department.logo" [alt]="department.name" class="w-9 shadow-2 my-3 mx-0"/>
+								<img  [src]="'assets/demo/images/departments/' + department.logo" [alt]="department.name" class="w-9 shadow-2 my-3 mx-0" height="170px" width="300px"/>
 								<div class="text-2xl font-bold">{{department.name}}</div>
 								<div class="mb-3">{{department.subtitle}}</div>
 								

@@ -5,12 +5,16 @@ import { UserRegister } from '../models/user-register';
 import { environment } from 'src/environments/environment';
 import { UserLogin } from '../models/user-login';
 import { RefreshToken } from '../models/refreshToken';
+import { JwtHelperService } from '@auth0/angular-jwt';
+
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+
+  helper = new JwtHelperService();
 
   constructor(private http: HttpClient) { }
 
@@ -32,9 +36,10 @@ export class AuthService {
     return this.http.post<string>(environment.apiUrl + '/token', refreshToken);
   }
 
-  //return boolean value for isLoggedIn
   public isLoggedIn(): any {
-  return !!localStorage.getItem('authToken');
+    const token = localStorage.getItem('authToken');
+    return !this.helper.isTokenExpired(token);
+  // return !!localStorage.getItem('authToken');
  
   }
 }

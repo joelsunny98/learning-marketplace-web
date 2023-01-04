@@ -1,8 +1,8 @@
 
     <div *ngIf="isLoggedIn()">
         <p-menubar [model]="items" class="layout-topbar">
-        <div>
-            <button type="button" (click)="Logout()" pButton label="Logout" icon="pi pi-power-off" style="margin-left:.25em" routerLink="login"></button>
-        </div>
-    </p-menubar>
+            <div align="right">
+                <button type="button" (click)="Logout()" pButton label="Logout" icon="pi pi-power-off" style="margin-left:.25em" routerLink="login"></button>
+            </div>
+        </p-menubar>
     </div>

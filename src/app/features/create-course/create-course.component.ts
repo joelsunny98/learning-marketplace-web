@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Message, MessageService } from 'primeng/api';
-import { Course } from 'src/app/shared/models/course';
+
 import { Department } from 'src/app/shared/models/department';
 import { Trainer } from 'src/app/shared/models/trainer';
-import { User } from 'src/app/shared/models/user';
+
 import { CourseService } from 'src/app/shared/services/course.service';
 import { DepartmentService } from 'src/app/shared/services/department.service';
 

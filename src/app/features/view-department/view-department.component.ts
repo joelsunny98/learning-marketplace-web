@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ConfirmationService, MenuItem, Message, PrimeNGConfig } from 'primeng/api';
 import { Department } from 'src/app/shared/models/department';
+import { AuthService } from 'src/app/shared/services/auth.service';
 import { DepartmentService } from 'src/app/shared/services/department.service';
 
 @Component({
@@ -22,7 +23,8 @@ export class ViewDepartmentComponent {
   constructor(private departmentService : DepartmentService, 
               private primengConfig : PrimeNGConfig, 
               private fb : FormBuilder,
-              private confirmationService: ConfirmationService) { }
+              private confirmationService: ConfirmationService,
+              private authService: AuthService) { }
 
   ngOnInit() {
     this.getDepartments();
@@ -71,5 +73,9 @@ export class ViewDepartmentComponent {
 
   showDisplay() {
     this.display = true;
+  }
+
+  isAdmin() {
+    return this.authService.decodedToken.role == "Admin";
   }
 }

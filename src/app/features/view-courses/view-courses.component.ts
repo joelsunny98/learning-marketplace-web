@@ -4,6 +4,7 @@ import { Course } from 'src/app/shared/models/course';
 import { CourseService } from 'src/app/shared/services/course.service';
 import { DataView } from 'primeng/dataview';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-view-courses',
@@ -21,7 +22,8 @@ export class ViewCoursesComponent {
   constructor(private courseService : CourseService, 
               private primengConfig : PrimeNGConfig, 
               private fb : FormBuilder,
-              private confirmationService: ConfirmationService ) { }
+              private confirmationService: ConfirmationService,
+              private authService: AuthService ) { }
 
   ngOnInit() {
     this.getCourses();
@@ -63,6 +65,15 @@ export class ViewCoursesComponent {
         this.msgs = [{severity:'info', summary:'Rejected', detail:'You have rejected'}];
       }
     })
+  }
+
+  isAdminOrTrainer() {
+    if(this.authService.decodedToken.role == "Admin" || this.authService.decodedToken.role == "Trainer") {
+      return true;
+    }
+    else{
+      return false;
+    }
   }
 
   

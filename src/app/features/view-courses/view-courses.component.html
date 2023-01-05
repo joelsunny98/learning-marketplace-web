@@ -32,8 +32,10 @@
 							</div>
 							<div class="flex flex-row md:flex-column justify-content-between w-full md:w-auto align-items-center md:align-items-end mt-5 md:mt-0">
 								<span class="text-2xl font-semibold mb-2 align-self-center md:align-self-end">${{course.coursePrice}}</span>						
-								<p-button [routerLink]="[course.id, 'edit']" icon="pi pi-pencil" styleClass="p-button-success mb-2"></p-button> &nbsp;&nbsp;    
-								<p-button  (onClick)="deleteCourse(course.id)" icon="pi pi-trash" styleClass="p-button-danger mb-2"></p-button>
+								<div *ngIf="isAdminOrTrainer()">
+									<p-button [routerLink]="[course.id, 'edit']" icon="pi pi-pencil" styleClass="p-button-success mb-2"></p-button> &nbsp;&nbsp;
+									<p-button  (onClick)="deleteCourse(course.id)" icon="pi pi-trash" styleClass="p-button-danger mb-2"></p-button>
+								</div>
 								<span [class]="'product-badge status-' + course.deliveryMethod.toLowerCase()">{{course.deliveryMethod}}</span>
 							</div>
 						</div>
@@ -59,8 +61,10 @@
 								<span class="text-2xl font-semibold">${{course.coursePrice}}</span>
 								<div class="">
 									<p-button [routerLink]="[course.id, 'apply']" icon="pi pi-chevron-circle-right" styleClass="p-button-info mb-2"></p-button> &nbsp;&nbsp;    
-									<p-button [routerLink]="[course.id, 'edit']" icon="pi pi-pencil" styleClass="p-button-success mb-2"></p-button> &nbsp;&nbsp;    
-									<p-button  (onClick)="confirmDelete(course.id)" icon="pi pi-trash" styleClass="p-button-danger mb-2"></p-button>
+									<div *ngIf="isAdminOrTrainer()">
+										<p-button [routerLink]="[course.id, 'edit']" icon="pi pi-pencil" styleClass="p-button-success mb-2"></p-button> &nbsp;&nbsp;    
+										<p-button  (onClick)="confirmDelete(course.id)" icon="pi pi-trash" styleClass="p-button-danger mb-2"></p-button>
+									</div>
 								</div>
 								
 							</div>

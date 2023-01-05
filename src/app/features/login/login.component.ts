@@ -25,13 +25,13 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.loginForm.value).subscribe((token : Token) => {
       localStorage.setItem('authToken', token.accessToken);
       localStorage.setItem('refreshToken', token.refreshToken);
-      
       this.authService.decodeToken(token.accessToken);
+      
       
       this.router.navigate(['/department']);
     }
     )
-    // this.router.navigate(['/view-department']);
+    
   }
 
   ngOnInit() : void {

@@ -4,6 +4,7 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Token } from 'src/app/shared/models/token';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +14,8 @@ import { Token } from 'src/app/shared/models/token';
 export class LoginComponent implements OnInit {
   
   loginForm!: FormGroup;
+  helper = new JwtHelperService();
+  decodedToken : any;
 
   
   
@@ -22,6 +25,9 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.loginForm.value).subscribe((token : Token) => {
       localStorage.setItem('authToken', token.accessToken);
       localStorage.setItem('refreshToken', token.refreshToken);
+      
+      this.authService.decodeToken(token.accessToken);
+      
       this.router.navigate(['/department']);
     }
     )
@@ -35,7 +41,7 @@ export class LoginComponent implements OnInit {
 
     });
 
-    this.loginForm.valueChanges.subscribe(console.log)
+    
 
     if(this.authService.isLoggedIn()){
       this.router.navigate(['/department']);

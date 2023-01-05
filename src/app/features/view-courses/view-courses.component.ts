@@ -23,7 +23,7 @@ export class ViewCoursesComponent {
               private primengConfig : PrimeNGConfig, 
               private fb : FormBuilder,
               private confirmationService: ConfirmationService,
-              private authService: AuthService ) { }
+              public authService: AuthService ) { }
 
   ngOnInit() {
     this.getCourses();
@@ -67,14 +67,14 @@ export class ViewCoursesComponent {
     })
   }
 
-  isAdminOrTrainer() {
-    if(this.authService.decodedToken.role == "Admin" || this.authService.decodedToken.role == "Trainer") {
-      return true;
-    }
-    else{
-      return false;
-    }
-  }
+  // isAdminOrTrainer() {
+  //   if(this.authService.decodedToken.role == "Admin" || this.authService.decodedToken.role == "Trainer") {
+  //     return true;
+  //   }
+  //   else{
+  //     return false;
+  //   }
+  // }
 
   
 }

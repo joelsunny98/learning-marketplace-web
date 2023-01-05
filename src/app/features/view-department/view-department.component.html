@@ -18,7 +18,7 @@
 						<p-dataViewLayoutOptions></p-dataViewLayoutOptions>
 					</form>
 					<br>
-					<p-button type="button" (click)="showDisplay()" icon="pi pi-plus" label="Create"></p-button>
+					<p-button *ngIf="authService.decodedToken.role == 'Admin'" type="button" (click)="showDisplay()" icon="pi pi-plus" label="Create"></p-button>
 					<!-- <p-button icon="pi pi-plus" label="Create"  routerLink="/create-department"></p-button> -->
 				
 						
@@ -39,7 +39,7 @@
 							</div>
 							<div class="flex flex-row md:flex-column justify-content-between w-full md:w-auto align-items-center md:align-items-end mt-5 md:mt-0">
 								<span class="text-1xl font-semibold mb-2 align-self-center md:align-self-end">{{department.subtitle}}</span>
-								<div class="" *ngIf="isAdmin()">
+								<div *ngIf="authService.decodedToken.role == 'Admin'">
 									<p-button [routerLink]="[department.id, 'edit']"  icon="pi pi-pencil" styleClass="p-button-success mb-2"></p-button>  &nbsp;&nbsp;   
 									<p-button routerLink="/apply-course" (onClick)="deleteDepartment(department.id)" icon="pi pi-trash" styleClass="p-button-danger mb-2"></p-button>
 								</div>
@@ -65,7 +65,7 @@
 							</div>
 							<div class="flex align-items-center justify-content-between">
 								<p-button icon="pi pi-info-circle" routerLink="/course"></p-button>
-								<div *ngIf="isAdmin()">
+								<div *ngIf="authService.decodedToken.role == 'Admin'">
 									<p-button [routerLink]="[department.id, 'edit']" icon="pi pi-pencil" styleClass="p-button-success mb-2"></p-button> &nbsp;&nbsp;    
 									<p-button  (onClick)="confirmDelete(department.id)" icon="pi pi-trash" styleClass="p-button-danger mb-2"></p-button>
 									

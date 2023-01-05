@@ -8,7 +8,7 @@ import { LearnerApplication } from '../models/lernerApplication';
   providedIn: 'root'
 })
 export class LearningApplicationService {
-  private url= "learner-application";
+  private url= "learner-applications";
 
   constructor(private http : HttpClient) { }
 

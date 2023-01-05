@@ -47,7 +47,5 @@ export class AuthService {
 
   public decodeToken(token : any) {
     this.decodedToken = this.helper.decodeToken(token);
-    
-    
   }
 }

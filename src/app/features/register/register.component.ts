@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserRegister } from 'src/app/shared/models/user-register';
 import { AuthService } from 'src/app/shared/services/auth.service';
 
@@ -18,18 +19,20 @@ export class RegisterComponent implements OnInit {
   ];
   
 
-  constructor(private authService : AuthService, private fb : FormBuilder) { }
+  constructor(private authService : AuthService, private fb : FormBuilder, private router: Router) { }
 
   register() {
     console.log(this.registerForm.value);
-    this.authService.register(this.registerForm.value).subscribe();
+    this.authService.register(this.registerForm.value).subscribe(data => {
+      this.router.navigate(['/login'])
+    });
   }
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
       firstName : new FormControl(''),
       lastName : new FormControl(''),
-      role : new FormControl(''),
+      role : new FormControl(2),
       username : new FormControl(''),
       password : new FormControl('')
     })

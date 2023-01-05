@@ -21,14 +21,17 @@ export class ViewDepartmentComponent {
   display : boolean = false;
 
   userName : string = "";
+  role: any;
 
   constructor(private departmentService : DepartmentService, 
               private primengConfig : PrimeNGConfig, 
               private fb : FormBuilder,
               private confirmationService: ConfirmationService,
-              private authService: AuthService) { }
+              public authService: AuthService) { }
 
   ngOnInit() {
+    this.role = this.authService.decodedToken.role;
+    console.log(this.role)
     this.getDepartments();
     // this.userName = this.authService.decodedToken.name;
 
@@ -78,7 +81,7 @@ export class ViewDepartmentComponent {
     this.display = true;
   }
 
-  isAdmin() {
-    return this.authService.decodedToken.role == "Admin";
-  }
+  // isAdmin() {
+  //   return this.authService.decodedToken.role == "Admin";
+  // }
 }

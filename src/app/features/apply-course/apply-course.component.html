@@ -21,19 +21,15 @@
                         
                     </p-divider>
     
-                    <p class="line-height-3 m-0">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et
-                        voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur
-                        a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis
-                        doloribus asperiores repellat.
-                        Donec vel volutpat ipsum. Integer nunc magna, posuere ut tincidunt eget, egestas vitae sapien.
-                        Morbi dapibus luctus odio.</p>
+                    
                 </div>
                 <div class="col-2">
                     <p-divider layout="vertical">
-                        <b>OR</b>
+                        
                     </p-divider>
                 </div>
                 <div class="col-4 flex align-items-center justify-content-center">
+                    
                     <!-- <div class="p-fluid">
                         <div class="field">
                             <label for="username">Username</label>
@@ -45,7 +41,7 @@
                         </div>
                         <p-button label="Login" class="mt-2"></p-button>
                     </div> -->
-
+                    <br><br>
                     <p-card header="Price : ${{course.coursePrice}}" subheader="{{course.type}}" [style]="{width: '500px'}" styleClass="p-card-shadow">
                         <ng-template pTemplate="header">
                             <img [src]="'../../../assets/demo/images/courses/' + course.teaserImage" [alt]="course.reference" class="w-9 shadow-2 my-3 mx-0"/>
@@ -55,7 +51,7 @@
                             {{ course.publishAt | date }} - {{ course.unpublishAt | date }}
                         </span>
                         <ng-template pTemplate="footer">
-                            <p-button label="APPLY" (onClick)="saveApplication()" icon="pi pi-send"></p-button>
+                            <p-button *ngIf="authService.decodedToken.role == 'Learner'" label="APPLY" (onClick)="saveApplication()" icon="pi pi-send"></p-button>
                             
                         </ng-template>
                     </p-card>

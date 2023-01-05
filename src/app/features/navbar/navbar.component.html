@@ -23,16 +23,29 @@
     
        
     
-        <div class="layout-topbar-menu">
+        <div class="layout-topbar-menu" *ngIf="isLoggedIn()">
 
-            <a routerLink="/department">
+            
+
+            <!-- <a routerLink="/department">
                 <span >Departments</span>
             </a>
 
             <a routerLink="/course" >
                 <span >Courses</span>
-            </a>
-            
+            </a> -->
+
+            <button class="p-link layout-topbar-button"  routerLink="/department">
+                <!-- <i class="assets/demo/images/c-icon.png"></i> -->
+                <img class="png-icon" src="assets/demo/images/d-icon.png" style="width: 24px; height: 24px;">
+                <span>Courses</span>
+            </button>
+
+            <button class="p-link layout-topbar-button"  routerLink="/course">
+                <!-- <i class="assets/demo/images/c-icon.png"></i> -->
+                <img class="png-icon" src="assets/demo/images/c-icon.png" style="width: 24px; height: 24px;">
+                <span>Courses</span>
+            </button>
 
             <button class="p-link layout-topbar-button" (click)="Logout()" routerLink="login">
                 <i class="pi pi-power-off"></i>

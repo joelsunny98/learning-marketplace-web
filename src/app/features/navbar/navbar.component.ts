@@ -14,24 +14,28 @@ export class NavbarComponent {
 
   data : RefreshToken = {};
 
+  userName : string = "";
+
   
 
   constructor(private authService : AuthService, ) {}
 
   ngOnInit()  {
 
-    if(this.authService.isLoggedIn()){
-      this.items = [
-        { label : 'Courses', routerLink : 'course' },
-        { label : 'Departments', routerLink : 'department'}
-      ]
-    }
-    else {
-      this.items = [
-        // { label : 'Register', icon :'pi pi-fw pi-user-plus', routerLink : 'register'},
-        // { label : 'Login', routerLink : 'login'},
-      ]
-    } 
+    
+
+    // if(this.authService.isLoggedIn()){
+    //   this.items = [
+    //     { label : 'Courses', routerLink : 'course' },
+    //     { label : 'Departments', routerLink : 'department'}
+    //   ]
+    // }
+    // else {
+    //   this.items = [
+    //     // { label : 'Register', icon :'pi pi-fw pi-user-plus', routerLink : 'register'},
+    //     // { label : 'Login', routerLink : 'login'},
+    //   ]
+    // } 
   }
 
   Logout() {

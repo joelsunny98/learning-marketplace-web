@@ -20,6 +20,8 @@ export class ViewDepartmentComponent {
 
   display : boolean = false;
 
+  userName : string = "";
+
   constructor(private departmentService : DepartmentService, 
               private primengConfig : PrimeNGConfig, 
               private fb : FormBuilder,
@@ -28,6 +30,7 @@ export class ViewDepartmentComponent {
 
   ngOnInit() {
     this.getDepartments();
+    // this.userName = this.authService.decodedToken.name;
 
     this.search = this.fb.group({
       name : new FormControl('')

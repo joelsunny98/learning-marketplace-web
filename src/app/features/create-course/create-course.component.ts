@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Message, MessageService } from 'primeng/api';
 
@@ -47,22 +47,22 @@ export class CreateCourseComponent {
 
   buildCourseForm() {
     this.createCourseForm = this.fb.group({
-      title: new FormControl(''),
-      reference: new FormControl(''),
-      subtitle: new FormControl(''),
-      overview: new FormControl(''),
-      type: new FormControl(''),
-      coursePrice: new FormControl(''),
-      category: new FormControl(''),
-      credits: new FormControl(''),
-      level: new FormControl(''),
-      deliveryMethod: new FormControl(''),
-      status: new FormControl(''),
-      publishStatus: new FormControl(''),
-      publishAt: new FormControl(''),
-      unpublishAt: new FormControl(''),
-      departmentId: new FormControl(''),
-      trainerId: new FormControl('')
+      title: new FormControl('', [Validators.required]),
+      reference: new FormControl('', [Validators.required]),
+      subtitle: new FormControl('', [Validators.required]),
+      overview: new FormControl('', [Validators.required]),
+      type: new FormControl('', [Validators.required]),
+      coursePrice: new FormControl('', [Validators.required]),
+      category: new FormControl('', [Validators.required]),
+      credits: new FormControl('', [Validators.required]),
+      level: new FormControl('', [Validators.required]),
+      deliveryMethod: new FormControl('', [Validators.required]),
+      status: new FormControl('', [Validators.required]),
+      publishStatus: new FormControl('', [Validators.required]),
+      publishAt: new FormControl('', [Validators.required]),
+      unpublishAt: new FormControl('', [Validators.required]),
+      departmentId: new FormControl('', [Validators.required]),
+      trainerId: new FormControl('', [Validators.required])
     })
   }
 

@@ -13,14 +13,21 @@ export class CourseService {
 
   constructor(private http : HttpClient) { }
 
-  public getCourseList(name? : any): Observable<Course[]> {
-    if(name == undefined) 
+  public getCourseList(departmentId? : any,name? : any): Observable<Course[]> {
+    if(name != undefined || departmentId != undefined) 
     {
-      return this.http.get<Course[]>(`${environment.apiUrl}/${this.url}`);
+      if(name != undefined)
+      {        
+        return this.http.get<Course[]>(`${environment.apiUrl}/${this.url}?name=${name}`);
+      }
+      else
+      {
+        return this.http.get<Course[]>(`${environment.apiUrl}/${this.url}?departmentId=${departmentId}`);
+      }
     }
     else
     {
-      return this.http.get<Course[]>(`${environment.apiUrl}/${this.url}?name=${name}`);
+      return this.http.get<Course[]>(`${environment.apiUrl}/${this.url}`);
     }
   }
 

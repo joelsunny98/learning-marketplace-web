@@ -5,6 +5,8 @@ import { CourseService } from 'src/app/shared/services/course.service';
 import { DataView } from 'primeng/dataview';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { AuthService } from 'src/app/shared/services/auth.service';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-view-courses',
@@ -13,21 +15,23 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 })
 export class ViewCoursesComponent {
   courses! : Course[];
-
   search! : FormGroup;
-
   msgs: Message[] = [];
+  departmentId! : string | null;
   
 
   constructor(private courseService : CourseService, 
               private primengConfig : PrimeNGConfig, 
               private fb : FormBuilder,
               private confirmationService: ConfirmationService,
-              public authService: AuthService ) { }
+              public authService: AuthService,
+              private route: ActivatedRoute ) { }
 
   ngOnInit() {
+    this.departmentId = this.route.snapshot.paramMap.get('departmentId');
+    console.log(this.departmentId);
     this.getCourses();
-    
+
     this.search = this.fb.group({
       name : new FormControl('')
     });
@@ -43,9 +47,18 @@ export class ViewCoursesComponent {
   }
 
   getCourses() {
-    this.courseService.getCourseList().subscribe(data => {
-      this.courses = data;
-    });
+    if(this.departmentId)
+    {
+      this.courseService.getCourseList(this.departmentId).subscribe(data => {
+        this.courses = data;
+      });  
+    }
+    else
+    {
+      this.courseService.getCourseList().subscribe(data => {
+        this.courses = data;
+      });
+    }
   }
 
   deleteCourse(id : string) {
@@ -65,16 +78,5 @@ export class ViewCoursesComponent {
         this.msgs = [{severity:'info', summary:'Rejected', detail:'You have rejected'}];
       }
     })
-  }
-
-  // isAdminOrTrainer() {
-  //   if(this.authService.decodedToken.role == "Admin" || this.authService.decodedToken.role == "Trainer") {
-  //     return true;
-  //   }
-  //   else{
-  //     return false;
-  //   }
-  // }
-
-  
+  }  
 }

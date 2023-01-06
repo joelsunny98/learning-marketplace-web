@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { ConfirmationService, MenuItem, Message, PrimeNGConfig } from 'primeng/api';
+import { ConfirmationService, Message, PrimeNGConfig } from 'primeng/api';
 import { Department } from 'src/app/shared/models/department';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { DepartmentService } from 'src/app/shared/services/department.service';
@@ -13,14 +13,9 @@ import { DepartmentService } from 'src/app/shared/services/department.service';
 export class ViewDepartmentComponent {
 
   departments! : Department[];
-
   search! : FormGroup;
-
   msgs: Message[] = [];
-
   display : boolean = false;
-
-  userName : string = "";
   role: any;
 
   constructor(private departmentService : DepartmentService, 
@@ -31,9 +26,8 @@ export class ViewDepartmentComponent {
 
   ngOnInit() {
     this.role = this.authService.decodedToken.role;
-    console.log(this.role)
+
     this.getDepartments();
-    // this.userName = this.authService.decodedToken.name;
 
     this.search = this.fb.group({
       name : new FormControl('')
@@ -44,12 +38,6 @@ export class ViewDepartmentComponent {
         this.departments = dat;
       });
     })
-    
-    
-
-    this.primengConfig.ripple = true;
-
-    
   }
 
   getDepartments() {
@@ -80,8 +68,4 @@ export class ViewDepartmentComponent {
   showDisplay() {
     this.display = true;
   }
-
-  // isAdmin() {
-  //   return this.authService.decodedToken.role == "Admin";
-  // }
 }

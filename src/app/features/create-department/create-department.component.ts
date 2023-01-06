@@ -16,18 +16,13 @@ export class CreateDepartmentComponent {
   departmentId!: string | null;
   data! : Department[];
 
-  departmentDropdownItems = [
-    
-  ]
-
-
+  departmentDropdownItems = []
 
   constructor(private departmentService: DepartmentService,
     private fb: FormBuilder,
     private route: ActivatedRoute,
     private messageService: MessageService,
     private readonly router: Router) { }
-
 
   ngOnInit(): void {
     this.buildDepartmentForm();

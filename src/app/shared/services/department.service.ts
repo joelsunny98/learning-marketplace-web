@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Course } from '../models/course';
 import { Department } from '../models/department';
 
 @Injectable({
@@ -40,4 +41,7 @@ export class DepartmentService {
     return this.http.delete<any>(`${environment.apiUrl}/${this.url}/${id}`);
   }
 
+  public getCoursesByDepartment(id: string) : Observable<Course[]> {
+    return this.http.get<Course[]>(`${environment.apiUrl}/${this.url}/${id}/courses`);
+  }
 }

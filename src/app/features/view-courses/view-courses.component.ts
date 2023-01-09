@@ -6,6 +6,7 @@ import { DataView } from 'primeng/dataview';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { ActivatedRoute } from '@angular/router';
+import { DepartmentService } from 'src/app/shared/services/department.service';
 
 
 @Component({
@@ -20,7 +21,8 @@ export class ViewCoursesComponent {
   departmentId! : string | null;
   
 
-  constructor(private courseService : CourseService, 
+  constructor(private courseService : CourseService,
+              private departmentService : DepartmentService, 
               private primengConfig : PrimeNGConfig, 
               private fb : FormBuilder,
               private confirmationService: ConfirmationService,
@@ -28,7 +30,7 @@ export class ViewCoursesComponent {
               private route: ActivatedRoute ) { }
 
   ngOnInit() {
-    this.departmentId = this.route.snapshot.paramMap.get('departmentId');
+    this.departmentId = this.route.snapshot.paramMap.get('id');
     console.log(this.departmentId);
     this.getCourses();
 
@@ -49,9 +51,12 @@ export class ViewCoursesComponent {
   getCourses() {
     if(this.departmentId)
     {
-      this.courseService.getCourseList(this.departmentId).subscribe(data => {
+      this.departmentService.getCoursesByDepartment(this.departmentId).subscribe(data => {
         this.courses = data;
-      });  
+      })
+      // this.courseService.getCourseList(this.departmentId).subscribe(data => {
+      //   this.courses = data;
+      // });  
     }
     else
     {

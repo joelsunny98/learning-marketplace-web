@@ -64,7 +64,7 @@
 								
 							</div>
 							<div class="flex align-items-center justify-content-between">
-								<p-button icon="pi pi-info-circle" [routerLink]="['/course/',department.id]"></p-button>
+								<p-button icon="pi pi-info-circle" [routerLink]="['/department',department.id,'course']"></p-button>
 								<div *ngIf="authService.decodedToken.role == 'Admin'">
 									<p-button [routerLink]="[department.id, 'edit']" icon="pi pi-pencil" styleClass="p-button-success mb-2"></p-button> &nbsp;&nbsp;    
 									<p-button  (onClick)="confirmDelete(department.id)" icon="pi pi-trash" styleClass="p-button-danger mb-2"></p-button>

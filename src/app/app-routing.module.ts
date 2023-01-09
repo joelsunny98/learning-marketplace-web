@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ApplicationComponent } from './features/application/application.component';
 import { ApplyCourseComponent } from './features/apply-course/apply-course.component';
 import { CreateCourseComponent } from './features/create-course/create-course.component';
 import { CreateDepartmentComponent } from './features/create-department/create-department.component';
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path : 'department', component : ViewDepartmentComponent, canActivate : [AuthGuard] },
   { path : 'course', component : ViewCoursesComponent, canActivate : [AuthGuard] },
   { path : 'department/:id/course', component : ViewCoursesComponent, canActivate : [AuthGuard] },
-  { path : 'course/:id/apply', component : ApplyCourseComponent, canActivate : [AuthGuard] }
+  { path : 'course/:id/apply', component : ApplyCourseComponent, canActivate : [AuthGuard] },
+  { path: 'application', component: ApplicationComponent, canActivate : [AuthGuard] }
   
 ];
 

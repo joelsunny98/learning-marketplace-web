@@ -31,4 +31,12 @@ export class LearningApplicationService {
   public deleteLearnerApplication(id : string) : Observable<any> {
     return this.http.delete<any>(`${environment.apiUrl}/${this.url}/${id}`);
   }
+
+  public approveApplication(id : string) : Observable<any> {
+    return this.http.put<any>(`${environment.apiUrl}/${this.url}/approve/${id}`, null);
+  }
+
+  public rejectApplication(id : string) : Observable<any> {
+    return this.http.put<any>(`${environment.apiUrl}/${this.url}/reject/${id}`, null);
+  }
 }

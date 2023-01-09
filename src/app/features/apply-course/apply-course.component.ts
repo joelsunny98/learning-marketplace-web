@@ -46,7 +46,7 @@ export class ApplyCourseComponent {
       this.messageService.add({
         severity: "success",
         summary: "Saved",
-        detail: "Application Successfull"
+        detail: "Applied Successfully"
       });
       setTimeout(() => {
         this.router.navigate(['/course']);

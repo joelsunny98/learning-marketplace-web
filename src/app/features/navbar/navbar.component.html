@@ -1,55 +1,25 @@
-<!-- 
-    <div *ngIf="isLoggedIn()">
-        <p-menubar [model]="items" class="layout-topbar">
-            <div align="right">
-                <button type="button" (click)="Logout()" pButton label="Logout" icon="pi pi-power-off" style="margin-left:.25em" routerLink="login"></button>
-            </div>
-        </p-menubar>
-    </div> -->
+<div class="layout-topbar">
+    <a class="layout-topbar-logo" routerLink="/department">
+        <img  src="assets/demo/images/logo.png" alt="logo">
+        <span >Learning Marketplace</span>
+    </a>
 
-    <!-- <ul class="layout-topbar">
-        <li><a routerLink="/course">Course</a></li>
-        <li><a href="#news">News</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li style="float:right"><a class="active" href="#about">About</a></li>
-      </ul> -->
-
-      <div class="layout-topbar">
-        <a class="layout-topbar-logo" routerLink="/department">
-            <img  src="assets/demo/images/logo.png" alt="logo">
-            <span >Learning Marketplace</span>
-        </a>
-    
-    
-       
-    
-        <div class="layout-topbar-menu" *ngIf="isLoggedIn()">
-
+    <div class="layout-topbar-menu" *ngIf="isLoggedIn()">
+        <button class="p-link layout-topbar-button"  routerLink="/department" title="Departments">
             
+            <img class="png-icon" src="assets/demo/images/d-icon.png" style="width: 24px; height: 24px;" title="Departments">
+            <span>Courses</span>
+        </button>
 
-            <!-- <a routerLink="/department">
-                <span >Departments</span>
-            </a>
+        <button class="p-link layout-topbar-button"  routerLink="/course" title="Courses">
+            
+            <img class="png-icon" src="assets/demo/images/c-icon.png" style="width: 24px; height: 24px;" title="Courses">
+            <span>Courses</span>
+        </button>
 
-            <a routerLink="/course" >
-                <span >Courses</span>
-            </a> -->
-
-            <button class="p-link layout-topbar-button"  routerLink="/department" title="Departments">
-                <!-- <i class="assets/demo/images/c-icon.png"></i> -->
-                <img class="png-icon" src="assets/demo/images/d-icon.png" style="width: 24px; height: 24px;" title="Departments">
-                <span>Courses</span>
-            </button>
-
-            <button class="p-link layout-topbar-button"  routerLink="/course" title="Courses">
-                <!-- <i class="assets/demo/images/c-icon.png"></i> -->
-                <img class="png-icon" src="assets/demo/images/c-icon.png" style="width: 24px; height: 24px;" title="Courses">
-                <span>Courses</span>
-            </button>
-
-            <button class="p-link layout-topbar-button" (click)="Logout()" routerLink="login">
-                <i class="pi pi-power-off"></i>
-                <span>Logout</span>
-            </button>
-        </div>
+        <button class="p-link layout-topbar-button" (click)="Logout()" routerLink="login">
+            <i class="pi pi-power-off"></i>
+            <span>Logout</span>
+        </button>
     </div>
+</div>

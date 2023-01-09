@@ -22,6 +22,7 @@ import {ToastModule} from 'primeng/toast';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import { DividerModule } from 'primeng/divider';
 import { CardModule } from 'primeng/card';
+import { TableModule } from 'primeng/table';
 
 
 
@@ -37,6 +38,7 @@ import { ViewCoursesComponent } from './features/view-courses/view-courses.compo
 import { NavbarComponent } from './features/navbar/navbar.component';
 import { AuthGuard } from './shared/services/auth.guard';
 import { ApplyCourseComponent } from './features/apply-course/apply-course.component';
+import { ApplicationComponent } from './features/application/application.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,8 @@ import { ApplyCourseComponent } from './features/apply-course/apply-course.compo
     ViewDepartmentComponent,
     ViewCoursesComponent,
     NavbarComponent,
-    ApplyCourseComponent
+    ApplyCourseComponent,
+    ApplicationComponent
   ],
   imports: [
     BrowserModule,
@@ -73,7 +76,8 @@ import { ApplyCourseComponent } from './features/apply-course/apply-course.compo
     ToastModule,
     ConfirmDialogModule,
     DividerModule,
-    CardModule
+    CardModule,
+    TableModule
     
   ],
   providers: [{

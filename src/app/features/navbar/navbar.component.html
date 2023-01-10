@@ -5,6 +5,12 @@
     </a>
 
     <div class="layout-topbar-menu" *ngIf="isLoggedIn()">
+        <button *ngIf="authService.decodedToken.role == 'Trainer'" class="p-link layout-topbar-button"  routerLink="/application" title="Departments">
+            
+            <img class="png-icon" src="assets/demo/images/a-icon.png" style="width: 24px; height: 24px;" title="Departments">
+            <span>Courses</span>
+        </button>
+
         <button class="p-link layout-topbar-button"  routerLink="/department" title="Departments">
             
             <img class="png-icon" src="assets/demo/images/d-icon.png" style="width: 24px; height: 24px;" title="Departments">

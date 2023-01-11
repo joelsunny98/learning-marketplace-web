@@ -5,74 +5,153 @@
 			<h5>Create Course</h5>
 			<div class="field">
 				<label htmlFor="title">Title</label>
+
 				<input pInputText id="title" type="text" formControlName="title" />
+
+				<div *ngIf="title!.errors?.['required'] && titleClean()" >
+					<small class="p-error block">Title is required.</small>
+				</div>
+				
 			</div>
 			<div class="field">
                 <label htmlFor="reference">Reference</label>
+
 				<input pInputText id="reference" type="text" formControlName="reference"/>
+
+				<div *ngIf="reference!.errors?.['required'] && referenceClean()">
+					<small class="p-error block">Reference is required.</small>
+				</div>
 			</div>
             <div class="field">
                 <label htmlFor="subtitle">Subtitle</label>
                 <input pInputText id="subtitle" type="text" formControlName="subtitle"/>
+
+				<div *ngIf="subtitle!.errors?.['required']  && subtitleClean()">
+					<small class="p-error block">Subtitle is required.</small>
+				</div>
             </div>
             <div class="field">
 				<label htmlFor="overview">Overview</label>
 				<input pInputText id="overview" type="text" formControlName="overview"/>
+
+				<div *ngIf="overview!.errors?.['required'] && overviewClean()">
+					<small class="p-error block">Overview is required.</small>
+				</div>
 			</div>
             <div class="field">
 				<label htmlFor="type">Type</label>
 				<input pInputText id="type" type="text" formControlName="type"/>
+
+				<div *ngIf="type!.errors?.['required'] && typeClean()">
+					<small class="p-error block">Type is required.</small>
+				</div>
+
+				
+			
 			</div>
             <div class="field">
 				<label htmlFor="coursePrice">Course Price</label>
 				<input pInputText id="coursePrice" type="text" formControlName="coursePrice"/>
+
+				<div *ngIf="coursePrice!.errors?.['required'] && coursePriceClean()">
+					<small class="p-error block">Type is required.</small>
+				</div>
 			</div>
             <div class="field">
 				<label htmlFor="category">Category</label>
 				<input pInputText id="category" type="text" formControlName="category"/>
 			</div>
+
+			<div *ngIf="category!.errors?.['required'] && categoryClean()">
+				<small class="p-error block">*Required.</small>
+			</div>			
             <div class="field">
 				<label htmlFor="credits">Credits</label>
 				<input pInputText id="credits" type="text" formControlName="credits"/>
+
+				<div *ngIf="credits!.errors?.['required'] && creditsClean()">
+					<small class="p-error block">Type is required.</small>
+				</div>
 			</div>
             <div class="field">
 				<label htmlFor="level">Level</label>
 				<input pInputText id="level" type="text" formControlName="level"/>
+
+				<div *ngIf="level!.errors?.['required'] && levelClean()">
+					<small class="p-error block">Type is required.</small>
+				</div>
 			</div>
             <div class="field">
 				<label htmlFor="deliveryMethod">Delivery Method</label>
 				<input pInputText id="deliveryMethod" type="text" formControlName="deliveryMethod"/>
+
+				<div *ngIf="deliveryMethod!.errors?.['required'] && deliveryMethodClean()">
+					<small class="p-error block">Type is required.</small>
+				</div>
 			</div>
             <div class="field">
 				<label htmlFor="status">Status</label>
 				<input pInputText id="Status" type="text" formControlName="status"/>
+
+
+
+
+
+
+
+
+				<div *ngIf="status!.errors?.['required'] && statusClean()">
+					<small class="p-error block">Type is required.</small>
+				</div>
 			</div>
+
+
             <div class="field">
 				<label htmlFor="publishStatus">Publish Status</label>
 				<input pInputText id="publishStatus" type="text" formControlName="publishStatus"/>
+
+				<div *ngIf="publishStatus!.errors?.['required'] && publishStatusClean()">
+					<small class="p-error block">Type is required.</small>
+				</div>
 			</div>
             <div class="field">
 				<label htmlFor="publishAt">Publish Date</label>
                 <p-calendar [showIcon]="true" inputId="icon" formControlName="publishAt"></p-calendar>
+
+				<div *ngIf="publishAt!.errors?.['required'] && publishAtClean()">
+					<small class="p-error block">Type is required.</small>
+				</div>
 				<!-- <input pInputText id="publishAt" type="text"  formControlName="publishAt"/> -->
 			</div>
             <div class="field">
 				<label htmlFor="unpublishAt">Unpublish Date</label>
                 <p-calendar [showIcon]="true" inputId="icon" formControlName="unpublishAt"></p-calendar>
+
+				<div *ngIf="unpublishAt!.errors?.['required'] && unpublishAtClean()">
+					<small class="p-error block">Type is required.</small>
+				</div>
 				<!-- <input pInputText id="unpublishAt" type="text" formControlName="unpublishAt"/> -->
 			</div>
             <div class="field">
 				<label htmlFor="department">Department</label>
 				<p-dropdown [options]="DepartmentData" optionLabel="name" optionValue="id" formControlName="departmentId" class="w-full md:w-30rem mb-5" ></p-dropdown>
+
+				<div *ngIf="departmentId!.errors?.['required'] && departmentIdClean()">
+					<small class="p-error block">Type is required.</small>
+				</div>
 				<!-- <input pInputText id="department" type="text" formControlName="departmentId"/> -->
 			</div>
             <div class="field">
 				<label htmlFor="trainer">Trainer</label>
 				<p-dropdown [options]="TrainerData" optionLabel="name" optionValue="id" formControlName="trainerId" class="w-full md:w-30rem mb-5" ></p-dropdown>
+
+				<div *ngIf="trainerId!.errors?.['required'] && trainerIdClean()">
+					<small class="p-error block">Type is required.</small>
+				</div>
 				<!-- <input pInputText id="trainer" type="text" formControlName="trainerId"/> -->
 			</div>
             <br>
-            <button pButton pRipple label="Save" class="w-full p-3 text-xl" (click)="saveCourse()"></button>
+            <button pButton pRipple label="Save" class="w-full p-3 text-xl" (click)="saveCourse()" [disabled]="createCourseForm.invalid"></button>
             <!-- <button pButton pRipple label="Create" class="w-full p-3 text-xl" (click)="createCourse()" ></button>xxxxx  -->
 		</div>
     </div>

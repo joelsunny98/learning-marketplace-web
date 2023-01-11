@@ -66,6 +66,54 @@ export class CreateCourseComponent {
     })
   }
 
+  get title() { return this.createCourseForm.get('title'); }
+  titleClean() { return this.title!.touched; }
+
+  get reference() { return this.createCourseForm.get('reference'); }
+  referenceClean() { return this.reference!.touched; }
+
+  get subtitle() { return this.createCourseForm.get('subtitle'); }
+  subtitleClean() { return this.subtitle!.touched; }
+
+  get overview() { return this.createCourseForm.get('overview'); }
+  overviewClean() { return this.overview!.touched; }
+
+  get type() { return this.createCourseForm.get('type'); }
+  typeClean() { return this.type!.touched; }
+
+  get coursePrice() { return this.createCourseForm.get('coursePrice');}
+  coursePriceClean() { return this.coursePrice!.touched; }
+
+  get category() { return this.createCourseForm.get('category');}
+  categoryClean() { return this.category!.touched; }
+
+  get credits() { return this.createCourseForm.get('credits'); }
+  creditsClean() { return this.credits!.touched; }
+
+  get level() { return this.createCourseForm.get('level'); }
+  levelClean() { return this.level!.touched; }
+
+  get deliveryMethod() { return this.createCourseForm.get('deliveryMethod'); } 
+  deliveryMethodClean() { return this.deliveryMethod!.touched; }
+  
+  get status() { return this.createCourseForm.get('status'); }
+  statusClean() { return this.status!.touched; }
+
+  get publishStatus() { return this.createCourseForm.get('publishStatus'); }
+  publishStatusClean() { return this.publishStatus?.touched; }
+
+  get publishAt() { return this.createCourseForm.get('publishAt'); }
+  publishAtClean() { return this.publishAt!.touched; }
+
+  get unpublishAt() { return this.createCourseForm.get('unpublishAt'); }
+  unpublishAtClean() { return this.unpublishAt?.touched; }
+
+  get departmentId() { return this.createCourseForm.get('departmentId'); }
+  departmentIdClean() { return this.departmentId?.touched; }
+
+  get trainerId() { return this.createCourseForm.get('trainerId'); }
+  trainerIdClean() { return this.trainerId?.touched;}
+
   saveCourse() {
     if (this.courseId) {
       this.courseService.updateCourse(this.createCourseForm.value, this.courseId).subscribe(data => {

@@ -18,11 +18,12 @@ import { CalendarModule } from "primeng/calendar";
 import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
 import { ConfirmationService, MessageService } from "primeng/api";
-import {ToastModule} from 'primeng/toast';
+import { ToastModule } from 'primeng/toast';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import { DividerModule } from 'primeng/divider';
 import { CardModule } from 'primeng/card';
 import { TableModule } from 'primeng/table';
+import { PaginatorModule } from 'primeng/paginator';
 
 
 
@@ -77,8 +78,8 @@ import { ApplicationComponent } from './features/application/application.compone
     ConfirmDialogModule,
     DividerModule,
     CardModule,
-    TableModule
-    
+    TableModule,
+    PaginatorModule
   ],
   providers: [{
     provide : HTTP_INTERCEPTORS,

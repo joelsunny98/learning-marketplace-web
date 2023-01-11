@@ -1,25 +1,37 @@
 <br><br>
+<p-toast></p-toast>
 <div class="grid">
 	<div class="col-12">
 		<div class="card">
 			<h5>Filter Menu</h5>
-			<p-table #dt1 [value]="applications" [rows]="10"  [rowHover]="true" styleClass="p-datatable-gridlines" [paginator]="true" responsiveLayout="scroll">
+			<p-table #dt1 [value]="applications" [rows]="10"  [rowHover]="true" styleClass="p-datatable-gridlines" [paginator]="true" [showCurrentPageReport]="true" #paginator responsiveLayout="scroll" [(first)]="first" (onPage)="paginate($event)">
 				
 				<ng-template pTemplate="header">
 					<tr>
 						<th style="min-width: 15rem">
 							<div class="flex justify-content-between align-items-center">
-								Course Name								
+								Course Name	
+								<p-columnFilter type="text" field="courseName" display="menu" placeholder="Search by name"></p-columnFilter>							
 							</div>
 						</th>
 						<th style="min-width: 15rem">
 							<div class="flex justify-content-between align-items-center">
 								Applicant Name
+								<p-columnFilter type="text" field="learnerName" display="menu" placeholder="Search by name"></p-columnFilter>
 							</div>
 						</th>
 						<th style="min-width: 15rem">
 							<div class="flex justify-content-between align-items-center">
-								Status							
+								Status	
+								<p-columnFilter field="status" matchMode="equals" display="menu">
+									<ng-template pTemplate="filter" let-value let-filter="filterCallback">
+										<p-dropdown [ngModel]="value" [options]="statuses" (onChange)="filter($event.value)" placeholder="Any" [style]="{'min-width': '12rem'}" >
+											<ng-template let-option pTemplate="item">
+												<span [class]="'customer-badge status-' + option.value">{{option.label}}</span>
+											</ng-template>
+										</p-dropdown>
+									</ng-template>
+								</p-columnFilter>						
 							</div>
 						</th>
 						<th style="min-width: 15rem">
